@@ -12,6 +12,9 @@ interface ProductPageProps {
   params: Promise<{ slug: string }>
 }
 
+// Force dynamic rendering (no static generation at build time)
+export const dynamic = 'force-dynamic'
+
 export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
   const { slug } = await params
   const product = await prisma.product.findUnique({

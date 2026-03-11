@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   description: 'Premium trail running apparel designed for freedom of movement and exploration.',
 }
 
+// Force dynamic rendering (no static generation at build time)
+export const dynamic = 'force-dynamic'
+
 export default async function ProductsPage() {
   const products = await prisma.product.findMany({
     where: {
