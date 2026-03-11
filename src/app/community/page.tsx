@@ -27,7 +27,7 @@ export default function CommunityPage() {
 
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-3">
-          <div className="group">
+          <div className="group" id="run-clubs">
             <div className="flex h-16 w-16 items-center justify-center rounded-full border border-black/10">
               <MapPin className="h-8 w-8 text-black/60" />
             </div>
@@ -45,7 +45,7 @@ export default function CommunityPage() {
             </div>
           </div>
 
-          <div className="group">
+          <div className="group" id="events">
             <div className="flex h-16 w-16 items-center justify-center rounded-full border border-black/10">
               <Calendar className="h-8 w-8 text-black/60" />
             </div>
@@ -63,7 +63,7 @@ export default function CommunityPage() {
             </div>
           </div>
 
-          <div className="group">
+          <div className="group" id="challenges">
             <div className="flex h-16 w-16 items-center justify-center rounded-full border border-black/10">
               <Trophy className="h-8 w-8 text-black/60" />
             </div>

@@ -1,10 +1,11 @@
 'use client'
 
 import Link from "next/link";
-import { ShoppingBag, Menu } from "lucide-react";
+import { ShoppingBag, Menu, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/stores/cartStore";
 import { CartDrawer } from "@/components/cart/CartDrawer";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 
 export default function Header() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -22,18 +23,98 @@ export default function Header() {
               </Link>
               
               <nav className="hidden md:flex items-center gap-6 text-sm">
-                <Link
-                  href="/products"
-                  className="transition-colors hover:text-foreground/80 text-foreground/60"
-                >
-                  Shop
-                </Link>
-                <Link
-                  href="/community"
-                  className="transition-colors hover:text-foreground/80 text-foreground/60"
-                >
-                  Community
-                </Link>
+                <DropdownMenu.Root>
+                  <DropdownMenu.Trigger className="flex items-center gap-1 transition-colors hover:text-foreground/80 text-foreground/60 outline-none">
+                    Shop
+                    <ChevronDown className="h-3 w-3" />
+                  </DropdownMenu.Trigger>
+                  <DropdownMenu.Portal>
+                    <DropdownMenu.Content
+                      className="min-w-[200px] bg-stone border border-black/10 rounded-sm p-1 shadow-lg"
+                      sideOffset={5}
+                    >
+                      <DropdownMenu.Item asChild>
+                        <Link
+                          href="/products"
+                          className="block px-3 py-2 text-sm text-foreground/60 hover:text-foreground hover:bg-black/5 rounded-sm outline-none cursor-pointer transition-colors"
+                        >
+                          All Products
+                        </Link>
+                      </DropdownMenu.Item>
+                      <DropdownMenu.Item asChild>
+                        <Link
+                          href="/products?category=trail-shorts"
+                          className="block px-3 py-2 text-sm text-foreground/60 hover:text-foreground hover:bg-black/5 rounded-sm outline-none cursor-pointer transition-colors"
+                        >
+                          Trail Shorts
+                        </Link>
+                      </DropdownMenu.Item>
+                      <DropdownMenu.Item asChild>
+                        <Link
+                          href="/products?category=technical-tees"
+                          className="block px-3 py-2 text-sm text-foreground/60 hover:text-foreground hover:bg-black/5 rounded-sm outline-none cursor-pointer transition-colors"
+                        >
+                          Technical Tees
+                        </Link>
+                      </DropdownMenu.Item>
+                      <DropdownMenu.Item asChild>
+                        <Link
+                          href="/products?category=outerwear"
+                          className="block px-3 py-2 text-sm text-foreground/60 hover:text-foreground hover:bg-black/5 rounded-sm outline-none cursor-pointer transition-colors"
+                        >
+                          Outerwear
+                        </Link>
+                      </DropdownMenu.Item>
+                    </DropdownMenu.Content>
+                  </DropdownMenu.Portal>
+                </DropdownMenu.Root>
+
+                <DropdownMenu.Root>
+                  <DropdownMenu.Trigger className="flex items-center gap-1 transition-colors hover:text-foreground/80 text-foreground/60 outline-none">
+                    Community
+                    <ChevronDown className="h-3 w-3" />
+                  </DropdownMenu.Trigger>
+                  <DropdownMenu.Portal>
+                    <DropdownMenu.Content
+                      className="min-w-[200px] bg-stone border border-black/10 rounded-sm p-1 shadow-lg"
+                      sideOffset={5}
+                    >
+                      <DropdownMenu.Item asChild>
+                        <Link
+                          href="/community"
+                          className="block px-3 py-2 text-sm text-foreground/60 hover:text-foreground hover:bg-black/5 rounded-sm outline-none cursor-pointer transition-colors"
+                        >
+                          Overview
+                        </Link>
+                      </DropdownMenu.Item>
+                      <DropdownMenu.Item asChild>
+                        <Link
+                          href="/community#run-clubs"
+                          className="block px-3 py-2 text-sm text-foreground/60 hover:text-foreground hover:bg-black/5 rounded-sm outline-none cursor-pointer transition-colors"
+                        >
+                          Run Clubs
+                        </Link>
+                      </DropdownMenu.Item>
+                      <DropdownMenu.Item asChild>
+                        <Link
+                          href="/community#events"
+                          className="block px-3 py-2 text-sm text-foreground/60 hover:text-foreground hover:bg-black/5 rounded-sm outline-none cursor-pointer transition-colors"
+                        >
+                          Events
+                        </Link>
+                      </DropdownMenu.Item>
+                      <DropdownMenu.Item asChild>
+                        <Link
+                          href="/community#challenges"
+                          className="block px-3 py-2 text-sm text-foreground/60 hover:text-foreground hover:bg-black/5 rounded-sm outline-none cursor-pointer transition-colors"
+                        >
+                          Challenges
+                        </Link>
+                      </DropdownMenu.Item>
+                    </DropdownMenu.Content>
+                  </DropdownMenu.Portal>
+                </DropdownMenu.Root>
+
                 <Link
                   href="/journal"
                   className="transition-colors hover:text-foreground/80 text-foreground/60"
