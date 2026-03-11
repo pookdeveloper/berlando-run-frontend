@@ -39,10 +39,16 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
   const params = await searchParams
   const category = params.category
 
-  const whereClause = category
+  const categoryToEnum: Record<string, string> = {
+    'trail-shorts': 'TRAIL_SHORTS',
+    'technical-tees': 'TECHNICAL_TEES',
+    'outerwear': 'OUTERWEAR',
+  }
+
+  const whereClause = category && categoryToEnum[category]
     ? {
         featured: true,
-        category: category,
+        category: categoryToEnum[category] as any,
       }
     : {
         featured: true,
