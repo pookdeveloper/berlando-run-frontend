@@ -1,0 +1,311 @@
+:root {
+  --black: #06070a;
+  --stone: #d7d7d1;
+  --olive: #85a07a;
+  --sand: #b8b39e;
+  --silver: #909bab;
+  --text: #f3f5f8;
+  --surface: #0e1116;
+  --border: #1e252f;
+  --muted: #a9b3c2;
+  --radius-sm: 0.15rem;
+  --radius-md: 0.28rem;
+  --radius-lg: 0.42rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at 12% -8%, #1a202b 0%, #090b10 40%, var(--black) 75%);
+  color: var(--text);
+  font-family: "Inter", "Avenir Next", "SF Pro Display", "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+}
+
+.page {
+  min-height: 100vh;
+  background:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 90% -4%, rgba(133, 160, 122, 0.17), transparent 34%),
+    linear-gradient(180deg, #080a0f 0%, #06070a 100%);
+  background-size: 48px 48px, 48px 48px, auto, auto;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.75rem;
+}
+
+.section {
+  padding: 5.5rem 0;
+}
+
+.section-shell {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--muted);
+}
+
+.title {
+  font-size: clamp(2.5rem, 5.6vw, 5.8rem);
+  line-height: 0.98;
+  margin: 0.8rem 0 1rem;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: #bcc7d6;
+  max-width: 62ch;
+  line-height: 1.58;
+}
+
+.hero-kicker {
+  display: inline-block;
+  margin-bottom: 0.7rem;
+  padding: 0.35rem 0.72rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(156, 165, 179, 0.35);
+  background: rgba(15, 19, 25, 0.92);
+  color: #d0d8e4;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(8, 9, 12, 0.97), rgba(8, 9, 12, 0.28)),
+    linear-gradient(to right, rgba(13, 15, 20, 0.68), rgba(13, 15, 20, 0));
+  z-index: 1;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 7rem 0;
+}
+
+.cta-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: 1px solid transparent;
+  padding: 0.78rem 1.24rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, #6e8a63, #84a078);
+  color: #f7f7f3;
+}
+
+.btn-secondary {
+  border-color: rgba(144, 155, 171, 0.65);
+  color: #c4cedd;
+  background: rgba(14, 18, 24, 0.86);
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.collection-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card {
+  background: linear-gradient(160deg, rgba(13, 16, 21, 0.98), rgba(9, 11, 15, 1));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.3rem;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.34);
+}
+
+.pillars {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.feature-list {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.4rem;
+  color: #e8e8e3;
+}
+
+.product-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.spec-table td {
+  border-bottom: 1px solid #2f3130;
+  padding: 0.75rem 0;
+}
+
+.map-grid {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.city-chip {
+  border: 1px solid #2b3442;
+  border-radius: var(--radius-sm);
+  padding: 0.74rem 1rem;
+  text-align: center;
+  background: linear-gradient(135deg, #121720, #0c1016);
+}
+
+.journal-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.journal-item h3 {
+  margin-top: 0.6rem;
+  margin-bottom: 0.45rem;
+}
+
+.newsletter {
+  border-top: 1px solid #252b33;
+  border-bottom: 1px solid #252b33;
+  padding: 3rem 0;
+}
+
+.newsletter form {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.newsletter input {
+  min-width: 260px;
+  flex: 1;
+  background: #0f131a;
+  border: 1px solid #303845;
+  color: var(--text);
+  padding: 0.8rem 0.95rem;
+  border-radius: var(--radius-sm);
+}
+
+.footer {
+  padding: 2rem 0;
+  color: #8894a5;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .product-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.leaflet-container {
+  background: #0f1115;
+  filter: saturate(1.2) contrast(1.08);
+}
+
+.leaflet-control-zoom {
+  border: 1px solid #2a313d !important;
+  border-radius: var(--radius-sm) !important;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.26) !important;
+}
+
+.leaflet-control-zoom a {
+  background: #0f141b !important;
+  color: #d3dae5 !important;
+  border-bottom: 1px solid #2a313d !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: linear-gradient(160deg, #121821, #0d1117) !important;
+  color: #e6ebf2 !important;
+  border: 1px solid #2c3441 !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.42) !important;
+}
+
+.leaflet-popup-tip {
+  background: #0f141b !important;
+}
+
+.map-surface {
+  border: 1px solid #2a313d;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.36);
+}
+
+[data-reveal] {
+  will-change: transform, opacity;
+}
+
+@media (max-width: 900px) {
+  .title {
+    font-size: clamp(2rem, 9vw, 3.1rem);
+  }
+}
