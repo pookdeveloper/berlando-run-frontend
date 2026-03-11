@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { featuredProducts } from "@/lib/data";
 import Link from "next/link";
 import { ProductTabs } from "@/components/ProductTabs";
+import Image from "next/image";
 
 type ProductPageProps = {
   params: Promise<{
@@ -34,11 +35,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <p className="subtitle">{product.description}</p>
             <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", marginTop: "1.3rem" }}>
               {product.images.map((imageUrl, index) => (
-                <img
+                <Image
                   key={imageUrl}
                   src={imageUrl}
                   alt={`${product.name} image ${index + 1}`}
-                  style={{ width: "100%", borderRadius: "0.8rem", minHeight: "140px", objectFit: "cover" }}
+                  width={1200}
+                  height={800}
+                  style={{ width: "100%", borderRadius: "0.8rem", minHeight: "140px", objectFit: "cover", height: "auto" }}
                 />
               ))}
             </div>
