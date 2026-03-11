@@ -45,17 +45,11 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
     'outerwear': 'OUTERWEAR',
   }
 
-  const whereClause = category && categoryToEnum[category]
-    ? {
-        featured: true,
-        category: categoryToEnum[category] as any,
-      }
-    : {
-        featured: true,
-      }
-
   const products = await prisma.product.findMany({
-    where: whereClause,
+    where: {
+      featured: true,
+      ...(category && categoryToEnum[category] ? { category: categoryToEnum[category] as any } : {}),
+    },
     include: {
       images: {
         orderBy: {
