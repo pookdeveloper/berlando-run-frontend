@@ -4,51 +4,18 @@ import Link from 'next/link'
 import { prisma } from '@/lib/prisma'
 import { formatPrice } from '@/lib/utils'
 
-interface ProductsPageProps {
-  searchParams: Promise<{ category?: string }>
-}
-
-export async function generateMetadata({ searchParams }: ProductsPageProps): Promise<Metadata> {
-  const params = await searchParams
-  const category = params.category
-  
-  if (category) {
-    const categoryNames: Record<string, string> = {
-      'trail-shorts': 'Trail Shorts',
-      'technical-tees': 'Technical Tees',
-      'outerwear': 'Outerwear',
-    }
-    const categoryName = categoryNames[category] || 'Products'
-    
-    return {
-      title: `${categoryName} - Berlando Run`,
-      description: `Shop ${categoryName} designed for trail running performance and freedom.`,
-    }
-  }
-
-  return {
-    title: 'Products - Berlando Run',
-    description: 'Premium trail running apparel designed for freedom of movement and exploration.',
-  }
+export const metadata: Metadata = {
+  title: 'Products - Berlando Run',
+  description: 'Premium trail running apparel designed for freedom of movement and exploration.',
 }
 
 // Force dynamic rendering (no static generation at build time)
 export const dynamic = 'force-dynamic'
 
-export default async function ProductsPage({ searchParams }: ProductsPageProps) {
-  const params = await searchParams
-  const category = params.category
-
-  const categoryToEnum: Record<string, string> = {
-    'trail-shorts': 'TRAIL_SHORTS',
-    'technical-tees': 'TECHNICAL_TEES',
-    'outerwear': 'OUTERWEAR',
-  }
-
+export default async function ProductsPage() {
   const products = await prisma.product.findMany({
     where: {
       featured: true,
-      ...(category && categoryToEnum[category] ? { category: categoryToEnum[category] as any } : {}),
     },
     include: {
       images: {
@@ -64,36 +31,20 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
     },
   })
 
-  const categoryNames: Record<string, string> = {
-    'trail-shorts': 'Trail Shorts',
-    'technical-tees': 'Technical Tees',
-    'outerwear': 'Outerwear',
-  }
-
-  const categoryDescriptions: Record<string, string> = {
-    'trail-shorts': 'Engineered for maximum freedom of movement on technical terrain.',
-    'technical-tees': 'Merino-blend performance tees for temperature regulation and comfort.',
-    'outerwear': 'Weather protection without compromise. Technical shells for alpine conditions.',
-  }
-
-  const pageTitle = category ? categoryNames[category] : 'Shop Collection'
-  const pageDescription = category
-    ? categoryDescriptions[category]
-    : 'Each piece is engineered for maximum freedom of movement. Premium materials, minimal design, technical performance.'
-
   return (
     <div className="min-h-screen bg-stone">
       {/* Header Section */}
       <div className="border-b border-black/10">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <h1 className="font-mono text-sm uppercase tracking-wider text-black/60">
-            {category ? 'Shop' : 'Shop Collection'}
+            Shop Collection
           </h1>
           <p className="mt-4 text-4xl font-light tracking-tight text-black lg:text-5xl">
-            {pageTitle}
+            Performance apparel for trail runners
           </p>
           <p className="mt-6 max-w-2xl text-lg text-black/70">
-            {pageDescription}
+            Each piece is engineered for maximum freedom of movement. Premium materials, minimal design,
+            technical performance.
           </p>
         </div>
       </div>
