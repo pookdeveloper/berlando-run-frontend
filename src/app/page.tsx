@@ -1,9 +1,13 @@
 import Link from 'next/link'
 import { Users, TrendingUp, MapPin, Award, Target, Zap } from 'lucide-react'
+import { ParallaxHero } from '@/components/hero/ParallaxHero'
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-stone">
+    <>
+      <ParallaxHero />
+      
+      <div className="min-h-screen bg-stone">
       <div className="container mx-auto px-4 py-32">
         <div className="max-w-5xl mx-auto text-center space-y-10">
           <p className="font-mono text-xs uppercase tracking-wider text-black/60">
@@ -246,6 +250,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
