@@ -1,6 +1,10 @@
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import { Users, TrendingUp, MapPin, Award, Target, Zap } from 'lucide-react'
-import { ParallaxHero } from '@/components/hero/ParallaxHero'
+
+const ParallaxHero = dynamic(
+  () => import('@/components/hero/ParallaxHero').then(mod => ({ default: mod.ParallaxHero }))
+)
 
 export default function HomePage() {
   return (

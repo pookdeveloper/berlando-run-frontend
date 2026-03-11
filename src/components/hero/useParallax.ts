@@ -40,8 +40,8 @@ export function useParallax(options: ParallaxOptions = {}) {
           isMobile: '(max-width: 767px)',
           reduceMotion: '(prefers-reduced-motion: reduce)'
         },
-        (context: gsap.MatchMediaContext) => {
-          const { isMobile, reduceMotion } = context.conditions as Record<string, boolean>
+        (context) => {
+          const { isMobile, reduceMotion} = context.conditions as Record<string, boolean>
 
           if (reduceMotion) {
             return
