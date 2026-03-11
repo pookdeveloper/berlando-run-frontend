@@ -1,19 +1,23 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { prisma } from '@/lib/prisma'
 import { formatPrice } from '@/lib/utils'
+import { USE_MOCKS, mockProducts } from '@/mocks'
 
 export const metadata: Metadata = {
   title: 'Products - Berlando Run',
   description: 'Premium trail running apparel designed for freedom of movement and exploration.',
 }
 
-// Force dynamic rendering (no static generation at build time)
 export const dynamic = 'force-dynamic'
 
-export default async function ProductsPage() {
-  const products = await prisma.product.findMany({
+async function getProducts() {
+  if (USE_MOCKS) {
+    return mockProducts.filter(p => p.featured)
+  }
+  
+  const { prisma } = await import('@/lib/prisma')
+  return prisma.product.findMany({
     where: {
       featured: true,
     },
@@ -30,6 +34,10 @@ export default async function ProductsPage() {
       createdAt: 'desc',
     },
   })
+}
+
+export default async function ProductsPage() {
+  const products = await getProducts()
 
   return (
     <div className="min-h-screen bg-stone">
@@ -52,7 +60,7 @@ export default async function ProductsPage() {
       {/* Product Grid */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-          {products.map((product) => {
+          {products.map((product: any) => {
             const image = product.images[0]
 
             return (

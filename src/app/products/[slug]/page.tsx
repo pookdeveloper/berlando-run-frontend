@@ -1,33 +1,41 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { prisma } from '@/lib/prisma'
 import { formatPrice } from '@/lib/utils'
 import { ProductGallery } from '@/components/product/ProductGallery'
 import { VariantSelector } from '@/components/product/VariantSelector'
 import { AddToCart } from '@/components/product/AddToCart'
 import { ProductSpecs } from '@/components/product/ProductSpecs'
 import { MaterialStory } from '@/components/product/MaterialStory'
+import { USE_MOCKS, getProductBySlug } from '@/mocks'
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>
 }
 
-// Force dynamic rendering (no static generation at build time)
 export const dynamic = 'force-dynamic'
 
-export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
-  const { slug } = await params
-  const product = await prisma.product.findUnique({
+async function getProduct(slug: string) {
+  if (USE_MOCKS) {
+    return getProductBySlug(slug)
+  }
+  
+  const { prisma } = await import('@/lib/prisma')
+  return prisma.product.findUnique({
     where: { slug },
-    select: {
-      name: true,
-      description: true,
+    include: {
       images: {
-        take: 1,
         orderBy: { order: 'asc' },
+      },
+      variants: {
+        orderBy: { size: 'asc' },
       },
     },
   })
+}
+
+export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const product = await getProduct(slug)
 
   if (!product) {
     return {
@@ -43,7 +51,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     openGraph: {
       title: product.name,
       description: product.description,
-      images: image ? [{ url: image.url, alt: image.alt }] : [],
+      images: image ? [{ url: image.url, alt: image.alt || product.name }] : [],
     },
   }
 }
@@ -51,17 +59,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 export default async function ProductPage({ params }: ProductPageProps) {
   const { slug } = await params
   
-  const product = await prisma.product.findUnique({
-    where: { slug },
-    include: {
-      images: {
-        orderBy: { order: 'asc' },
-      },
-      variants: {
-        orderBy: { size: 'asc' },
-      },
-    },
-  })
+  const product = await getProduct(slug)
 
   if (!product) {
     notFound()
