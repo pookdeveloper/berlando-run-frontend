@@ -1,0 +1,170 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id              String           @id @default(cuid())
+  name            String
+  slug            String           @unique
+  description     String
+  price           Decimal          @db.Decimal(10, 2)
+  category        ProductCategory
+  productStory    String?          @db.Text
+  materialStory   String?          @db.Text
+  weight          Int?
+  material        String?
+  temperature     String?
+  featured        Boolean          @default(false)
+  useCases        ProductUseCase[]
+  images          ProductImage[]
+  variants        ProductVariant[]
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+
+  @@index([category])
+  @@index([slug])
+  @@index([featured])
+}
+
+model ProductImage {
+  id        String  @id @default(cuid())
+  productId String
+  url       String
+  alt       String
+  order     Int     @default(0)
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+  @@index([order])
+}
+
+model ProductVariant {
+  id        String  @id @default(cuid())
+  productId String
+  size      String
+  color     String?
+  sku       String  @unique
+  stock     Int     @default(0)
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+  @@index([sku])
+}
+
+model RunClub {
+  id          String   @id @default(cuid())
+  name        String
+  city        String
+  country     String
+  latitude    Float
+  longitude   Float
+  description String?  @db.Text
+  meetingDay  String?
+  meetingTime String?
+  instagram   String?
+  website     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([city])
+  @@index([country])
+}
+
+model Event {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String    @unique
+  type        EventType
+  description String    @db.Text
+  location    String
+  date        DateTime
+  image       String?
+  registrationUrl String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([slug])
+  @@index([date])
+  @@index([type])
+}
+
+model Challenge {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  description String   @db.Text
+  type        String
+  target      Int
+  unit        String
+  startDate   DateTime
+  endDate     DateTime
+  image       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([slug])
+  @@index([startDate])
+  @@index([endDate])
+}
+
+model JournalPost {
+  id          String          @id @default(cuid())
+  title       String
+  slug        String          @unique
+  excerpt     String
+  content     String          @db.Text
+  category    JournalCategory
+  author      String
+  image       String
+  publishedAt DateTime        @default(now())
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  @@index([slug])
+  @@index([category])
+  @@index([publishedAt])
+}
+
+model Newsletter {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  subscribedAt DateTime @default(now())
+
+  @@index([email])
+}
+
+enum ProductCategory {
+  TRAIL_SHORTS
+  TECHNICAL_TEES
+  BASE_LAYERS
+  OUTERWEAR
+  HYDRATION
+  CAPS
+  SOCKS
+}
+
+enum ProductUseCase {
+  LONG_DISTANCE
+  SPEED_WORK
+  TECHNICAL_TERRAIN
+  HOT_WEATHER
+  COLD_WEATHER
+}
+
+enum EventType {
+  SUNRISE_RUN
+  TRAIL_WEEKEND
+  URBAN_EXPLORATION
+}
+
+enum JournalCategory {
+  PHILOSOPHY
+  ROUTES
+  ATHLETES
+  GEAR
+}
