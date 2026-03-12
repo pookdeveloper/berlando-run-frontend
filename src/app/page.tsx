@@ -6,10 +6,23 @@ const ParallaxHero = dynamic(
   () => import('@/components/hero/ParallaxHero').then(mod => ({ default: mod.ParallaxHero }))
 )
 
-export default function HomePage() {
+const ParallaxHeroClassic = dynamic(
+  () => import('@/components/hero/ParallaxHeroClassic').then(mod => ({ default: mod.ParallaxHeroClassic }))
+)
+
+interface HomePageProps {
+  searchParams?: Promise<Record<string, string | string[] | undefined>>
+}
+
+export default async function HomePage({ searchParams }: HomePageProps) {
+  const resolvedParams = (await searchParams) ?? {}
+  const heroParam = resolvedParams.hero
+  const heroVariant = Array.isArray(heroParam) ? heroParam[0] : heroParam
+  const useClassicHero = heroVariant === 'classic'
+
   return (
     <>
-      <ParallaxHero />
+      {useClassicHero ? <ParallaxHeroClassic /> : <ParallaxHero />}
       
       <div className="min-h-screen bg-stone">
       <div className="container mx-auto px-4 py-32">
