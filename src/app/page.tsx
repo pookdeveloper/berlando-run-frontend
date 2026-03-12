@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { Users, TrendingUp, MapPin, Award, Target, Zap } from 'lucide-react'
+import { MosaicFillCard } from '@/components/animations/MosaicFillCard'
 
 const ParallaxHero = dynamic(
   () => import('@/components/hero/ParallaxHero').then(mod => ({ default: mod.ParallaxHero }))
@@ -148,53 +149,53 @@ export default async function HomePage({ searchParams }: HomePageProps) {
               </h2>
             </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <div className="border border-border p-8 transition-all hover:border-card-foreground/30">
-                <MapPin className="h-8 w-8 text-muted-foreground" />
+              <MosaicFillCard className="border border-border p-8 transition-all hover:border-card-foreground/30">
+                <MapPin className="h-8 w-8 text-muted-foreground transition-colors group-hover:text-primary" />
                 <h3 className="mt-4 text-lg font-medium text-card-foreground">Event Sponsorship</h3>
                 <p className="mt-2 text-sm text-card-foreground/70">
                   Weekly run clubs, trail weekends, urban exploration events across Europe
                 </p>
-              </div>
+              </MosaicFillCard>
 
-              <div className="border border-border p-8 transition-all hover:border-card-foreground/30">
-                <Award className="h-8 w-8 text-muted-foreground" />
+              <MosaicFillCard className="border border-border p-8 transition-all hover:border-card-foreground/30">
+                <Award className="h-8 w-8 text-muted-foreground transition-colors group-hover:text-primary" />
                 <h3 className="mt-4 text-lg font-medium text-card-foreground">Athlete Partnerships</h3>
                 <p className="mt-2 text-sm text-card-foreground/70">
                   Connect with elite and amateur athletes for authentic brand storytelling
                 </p>
-              </div>
+              </MosaicFillCard>
 
-              <div className="border border-border p-8 transition-all hover:border-card-foreground/30">
-                <Zap className="h-8 w-8 text-muted-foreground" />
+              <MosaicFillCard className="border border-border p-8 transition-all hover:border-card-foreground/30">
+                <Zap className="h-8 w-8 text-muted-foreground transition-colors group-hover:text-primary" />
                 <h3 className="mt-4 text-lg font-medium text-card-foreground">Content Creation</h3>
                 <p className="mt-2 text-sm text-card-foreground/70">
                   Editorial features, route guides, product reviews in our journal
                 </p>
-              </div>
+              </MosaicFillCard>
 
-              <div className="border border-border p-8 transition-all hover:border-card-foreground/30">
-                <Users className="h-8 w-8 text-muted-foreground" />
+              <MosaicFillCard className="border border-border p-8 transition-all hover:border-card-foreground/30">
+                <Users className="h-8 w-8 text-muted-foreground transition-colors group-hover:text-primary" />
                 <h3 className="mt-4 text-lg font-medium text-card-foreground">Community Activations</h3>
                 <p className="mt-2 text-sm text-card-foreground/70">
                   Pop-up experiences, product testing, exclusive brand events
                 </p>
-              </div>
+              </MosaicFillCard>
 
-              <div className="border border-border p-8 transition-all hover:border-card-foreground/30">
-                <Target className="h-8 w-8 text-muted-foreground" />
+              <MosaicFillCard className="border border-border p-8 transition-all hover:border-card-foreground/30">
+                <Target className="h-8 w-8 text-muted-foreground transition-colors group-hover:text-primary" />
                 <h3 className="mt-4 text-lg font-medium text-card-foreground">Digital Campaigns</h3>
                 <p className="mt-2 text-sm text-card-foreground/70">
                   Social media takeovers, challenges, influencer collaborations
                 </p>
-              </div>
+              </MosaicFillCard>
 
-              <div className="border border-border p-8 transition-all hover:border-card-foreground/30">
-                <TrendingUp className="h-8 w-8 text-muted-foreground" />
+              <MosaicFillCard className="border border-border p-8 transition-all hover:border-card-foreground/30">
+                <TrendingUp className="h-8 w-8 text-muted-foreground transition-colors group-hover:text-primary" />
                 <h3 className="mt-4 text-lg font-medium text-card-foreground">Data & Insights</h3>
                 <p className="mt-2 text-sm text-card-foreground/70">
                   Community trends, preferences, and performance data for strategic planning
                 </p>
-              </div>
+              </MosaicFillCard>
             </div>
           </div>
         </div>
