@@ -67,7 +67,7 @@ export function ParallaxHeroClassic() {
             >
               <a
                 href="/contact"
-                className="border border-white bg-white px-8 py-4 font-mono text-xs uppercase tracking-wider text-black transition-all hover:bg-white/90"
+                className="border border-primary bg-primary px-8 py-4 font-mono text-xs uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90"
               >
                 Partner With Us
               </a>
