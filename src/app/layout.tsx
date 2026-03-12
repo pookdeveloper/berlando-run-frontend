@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://berlando.run"),
   title: {
     default: "Berlando Run — Running as Freedom",
     template: "%s | Berlando Run",
