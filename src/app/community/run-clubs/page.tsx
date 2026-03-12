@@ -52,22 +52,22 @@ export default function RunClubsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-stone">
-      <div className="border-b border-black/10">
+    <div className="min-h-screen bg-background">
+      <div className="border-b border-border">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <Link
             href="/community"
-            className="inline-flex items-center font-mono text-xs uppercase tracking-wider text-black/40 hover:text-black/60 transition-colors"
+            className="inline-flex items-center font-mono text-xs uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors"
           >
             ← Back to Community
           </Link>
-          <h1 className="mt-8 font-mono text-sm uppercase tracking-wider text-black/60">
+          <h1 className="mt-8 font-mono text-sm uppercase tracking-wider text-muted-foreground">
             Run Clubs
           </h1>
-          <p className="mt-4 text-4xl font-light tracking-tight text-black lg:text-5xl">
+          <p className="mt-4 text-4xl font-light tracking-tight text-foreground lg:text-5xl">
             Run together, every week
           </p>
-          <p className="mt-6 max-w-2xl text-lg text-black/70">
+          <p className="mt-6 max-w-2xl text-lg text-foreground/70">
             Join our community run clubs across Europe. All paces welcome, from beginners to experienced trail runners.
           </p>
         </div>
@@ -78,32 +78,32 @@ export default function RunClubsPage() {
           {clubs.map((club) => (
             <div
               key={club.city}
-              className="border border-black/10 bg-white p-8 transition-all hover:border-black/20"
+              className="border border-border bg-card p-8 transition-all hover:border-foreground/20"
             >
-              <h3 className="text-2xl font-light text-black">{club.city}</h3>
+              <h3 className="text-2xl font-light text-card-foreground">{club.city}</h3>
               
               <div className="mt-6 space-y-4">
                 <div className="flex items-start gap-3">
-                  <MapPin className="h-5 w-5 text-black/40 mt-0.5" />
+                  <MapPin className="h-5 w-5 text-muted-foreground mt-0.5" />
                   <div>
-                    <p className="font-mono text-xs uppercase tracking-wider text-black/40">Location</p>
-                    <p className="mt-1 text-black/70">{club.location}</p>
+                    <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Location</p>
+                    <p className="mt-1 text-card-foreground/70">{club.location}</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Clock className="h-5 w-5 text-black/40 mt-0.5" />
+                  <Clock className="h-5 w-5 text-muted-foreground mt-0.5" />
                   <div>
-                    <p className="font-mono text-xs uppercase tracking-wider text-black/40">Schedule</p>
-                    <p className="mt-1 text-black/70">{club.day} at {club.time}</p>
+                    <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Schedule</p>
+                    <p className="mt-1 text-card-foreground/70">{club.day} at {club.time}</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Users className="h-5 w-5 text-black/40 mt-0.5" />
+                  <Users className="h-5 w-5 text-muted-foreground mt-0.5" />
                   <div>
-                    <p className="font-mono text-xs uppercase tracking-wider text-black/40">Community</p>
-                    <p className="mt-1 text-black/70">{club.members} members · {club.pace}</p>
+                    <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Community</p>
+                    <p className="mt-1 text-card-foreground/70">{club.members} members · {club.pace}</p>
                   </div>
                 </div>
               </div>
@@ -111,7 +111,7 @@ export default function RunClubsPage() {
               <div className="mt-8">
                 <Link
                   href="/contact"
-                  className="inline-flex w-full items-center justify-center border border-black bg-black px-6 py-3 font-mono text-xs uppercase tracking-wider text-white transition-all hover:bg-transparent hover:text-black"
+                  className="inline-flex w-full items-center justify-center border border-primary bg-primary px-6 py-3 font-mono text-xs uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90"
                 >
                   Join this club
                 </Link>
@@ -120,18 +120,18 @@ export default function RunClubsPage() {
           ))}
         </div>
 
-        <div className="mt-24 border-t border-black/10 pt-16">
+        <div className="mt-24 border-t border-border pt-16">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-light text-black">
+            <h2 className="text-3xl font-light text-foreground">
               Start your own club
             </h2>
-            <p className="mt-6 text-lg text-black/70">
+            <p className="mt-6 text-lg text-foreground/70">
               Want to organize a run club in your city? We support community-led initiatives with gear, resources, and guidance.
             </p>
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center border border-black px-8 py-3 font-mono text-xs uppercase tracking-wider text-black transition-all hover:bg-black hover:text-white"
+                className="inline-flex items-center justify-center border border-border px-8 py-3 font-mono text-xs uppercase tracking-wider text-foreground transition-all hover:bg-muted"
               >
                 Get in touch
               </Link>

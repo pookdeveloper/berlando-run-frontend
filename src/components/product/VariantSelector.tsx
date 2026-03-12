@@ -109,9 +109,9 @@ export function VariantSelector({ variants, onVariantChange }: VariantSelectorPr
     <div className="space-y-6">
       <div>
         <div className="flex items-center justify-between">
-          <h3 className="text-sm font-medium text-black">Size</h3>
+          <h3 className="text-sm font-medium text-foreground">Size</h3>
           {currentVariant && currentVariant.stock < 5 && currentVariant.stock > 0 && (
-            <span className="text-xs text-black/60">Only {currentVariant.stock} left</span>
+            <span className="text-xs text-muted-foreground">Only {currentVariant.stock} left</span>
           )}
         </div>
         <div className="mt-3 grid grid-cols-4 gap-2">
@@ -127,10 +127,10 @@ export function VariantSelector({ variants, onVariantChange }: VariantSelectorPr
                 className={cn(
                   'flex items-center justify-center border px-4 py-3 text-sm font-medium transition-colors',
                   isSelected
-                    ? 'border-black bg-black text-white'
+                    ? 'border-primary bg-primary text-primary-foreground'
                     : isAvailable
-                    ? 'border-black bg-transparent text-black hover:bg-black hover:text-white'
-                    : 'border-black/20 bg-black/5 text-black/40 cursor-not-allowed'
+                    ? 'border-border bg-transparent text-foreground hover:bg-muted'
+                    : 'border-border bg-muted text-muted-foreground cursor-not-allowed'
                 )}
               >
                 {size}
@@ -142,7 +142,7 @@ export function VariantSelector({ variants, onVariantChange }: VariantSelectorPr
 
       {colors.length > 0 && (
         <div>
-          <h3 className="text-sm font-medium text-black">Color</h3>
+          <h3 className="text-sm font-medium text-foreground">Color</h3>
           <div className="mt-3 flex flex-wrap gap-2">
             {colors.map((color) => {
               const isAvailable = isColorAvailable(color)
@@ -156,10 +156,10 @@ export function VariantSelector({ variants, onVariantChange }: VariantSelectorPr
                   className={cn(
                     'border px-6 py-3 text-sm font-medium transition-colors capitalize',
                     isSelected
-                      ? 'border-black bg-black text-white'
+                      ? 'border-primary bg-primary text-primary-foreground'
                       : isAvailable
-                      ? 'border-black bg-transparent text-black hover:bg-black hover:text-white'
-                      : 'border-black/20 bg-black/5 text-black/40 cursor-not-allowed'
+                      ? 'border-border bg-transparent text-foreground hover:bg-muted'
+                      : 'border-border bg-muted text-muted-foreground cursor-not-allowed'
                   )}
                 >
                   {color}
@@ -171,7 +171,7 @@ export function VariantSelector({ variants, onVariantChange }: VariantSelectorPr
       )}
 
       {currentVariant && currentVariant.stock === 0 && (
-        <p className="text-sm text-black/60">This variant is currently out of stock</p>
+        <p className="text-sm text-muted-foreground">This variant is currently out of stock</p>
       )}
     </div>
   )

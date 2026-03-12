@@ -7,20 +7,20 @@ export const metadata: Metadata = {
 
 export default function ReturnsPage() {
   return (
-    <div className="min-h-screen bg-stone">
+    <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
-          <h1 className="font-mono text-sm uppercase tracking-wider text-black/60">
+          <h1 className="font-mono text-sm uppercase tracking-wider text-muted-foreground">
             Returns & Exchanges
           </h1>
-          <p className="mt-4 text-4xl font-light tracking-tight text-black lg:text-5xl">
+          <p className="mt-4 text-4xl font-light tracking-tight text-foreground lg:text-5xl">
             Easy returns, guaranteed fit
           </p>
 
           <div className="mt-16 space-y-12">
             <section>
-              <h2 className="text-2xl font-light text-black">30-Day Return Policy</h2>
-              <div className="mt-6 space-y-4 text-lg leading-relaxed text-black/70">
+              <h2 className="text-2xl font-light text-foreground">30-Day Return Policy</h2>
+              <div className="mt-6 space-y-4 text-lg leading-relaxed text-foreground/70">
                 <p>
                   We want you to be completely satisfied with your purchase. If for any reason 
                   you're not happy with your order, you can return it within 30 days of delivery 
@@ -32,14 +32,14 @@ export default function ReturnsPage() {
               </div>
             </section>
 
-            <section className="border-t border-black/10 pt-12">
-              <h2 className="text-2xl font-light text-black">How to Return</h2>
+            <section className="border-t border-border pt-12">
+              <h2 className="text-2xl font-light text-foreground">How to Return</h2>
               <div className="mt-6 space-y-6">
                 <div>
-                  <h3 className="font-mono text-sm uppercase tracking-wider text-black/60">
+                  <h3 className="font-mono text-sm uppercase tracking-wider text-muted-foreground">
                     01. Initiate Return
                   </h3>
-                  <p className="mt-2 text-lg text-black/70">
+                  <p className="mt-2 text-lg text-foreground/70">
                     Contact us at{' '}
                     <a href="mailto:returns@berlando.run" className="underline">
                       returns@berlando.run
@@ -48,27 +48,27 @@ export default function ReturnsPage() {
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-mono text-sm uppercase tracking-wider text-black/60">
+                  <h3 className="font-mono text-sm uppercase tracking-wider text-muted-foreground">
                     02. Pack Your Items
                   </h3>
-                  <p className="mt-2 text-lg text-black/70">
+                  <p className="mt-2 text-lg text-foreground/70">
                     Place items in original packaging (or any secure packaging). Include a note 
                     with your order number and email address.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-mono text-sm uppercase tracking-wider text-black/60">
+                  <h3 className="font-mono text-sm uppercase tracking-wider text-muted-foreground">
                     03. Ship It Back
                   </h3>
-                  <p className="mt-2 text-lg text-black/70">
+                  <p className="mt-2 text-lg text-foreground/70">
                     Attach the return label we sent you and drop off at any authorized carrier location.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-mono text-sm uppercase tracking-wider text-black/60">
+                  <h3 className="font-mono text-sm uppercase tracking-wider text-muted-foreground">
                     04. Get Your Refund
                   </h3>
-                  <p className="mt-2 text-lg text-black/70">
+                  <p className="mt-2 text-lg text-foreground/70">
                     Once we receive and inspect your return, we'll process your refund within 5-7 
                     business days to your original payment method.
                   </p>
@@ -76,9 +76,9 @@ export default function ReturnsPage() {
               </div>
             </section>
 
-            <section className="border-t border-black/10 pt-12">
-              <h2 className="text-2xl font-light text-black">Exchanges</h2>
-              <div className="mt-6 space-y-4 text-lg leading-relaxed text-black/70">
+            <section className="border-t border-border pt-12">
+              <h2 className="text-2xl font-light text-foreground">Exchanges</h2>
+              <div className="mt-6 space-y-4 text-lg leading-relaxed text-foreground/70">
                 <p>
                   Need a different size or color? We're happy to exchange your item. Contact us at{' '}
                   <a href="mailto:returns@berlando.run" className="underline">
@@ -93,9 +93,9 @@ export default function ReturnsPage() {
               </div>
             </section>
 
-            <section className="border-t border-black/10 pt-12">
-              <h2 className="text-2xl font-light text-black">Return Shipping</h2>
-              <div className="mt-6 space-y-4 text-lg leading-relaxed text-black/70">
+            <section className="border-t border-border pt-12">
+              <h2 className="text-2xl font-light text-foreground">Return Shipping</h2>
+              <div className="mt-6 space-y-4 text-lg leading-relaxed text-foreground/70">
                 <p>
                   <strong>Free Returns:</strong> Return shipping is free for all EU orders.
                 </p>
@@ -106,9 +106,9 @@ export default function ReturnsPage() {
               </div>
             </section>
 
-            <section className="border-t border-black/10 pt-12">
-              <h2 className="text-2xl font-light text-black">Exceptions</h2>
-              <div className="mt-6 space-y-4 text-lg leading-relaxed text-black/70">
+            <section className="border-t border-border pt-12">
+              <h2 className="text-2xl font-light text-foreground">Exceptions</h2>
+              <div className="mt-6 space-y-4 text-lg leading-relaxed text-foreground/70">
                 <p>
                   The following items cannot be returned:
                 </p>
@@ -121,9 +121,9 @@ export default function ReturnsPage() {
               </div>
             </section>
 
-            <section className="border-t border-black/10 pt-12">
-              <h2 className="text-2xl font-light text-black">Questions?</h2>
-              <div className="mt-6 text-lg text-black/70">
+            <section className="border-t border-border pt-12">
+              <h2 className="text-2xl font-light text-foreground">Questions?</h2>
+              <div className="mt-6 text-lg text-foreground/70">
                 <p>
                   If you have any questions about returns or exchanges, please contact our 
                   customer service team at{' '}

@@ -66,24 +66,24 @@ export default async function ProductPage({ params }: ProductPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-stone">
+    <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
           <ProductGallery images={product.images} productName={product.name} />
 
           <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
-            <p className="font-mono text-xs uppercase tracking-wider text-black/60">
+            <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
               {product.category}
             </p>
-            <h1 className="mt-2 text-3xl font-light tracking-tight text-black sm:text-4xl">
+            <h1 className="mt-2 text-3xl font-light tracking-tight text-foreground sm:text-4xl">
               {product.name}
             </h1>
-            <p className="mt-4 text-2xl font-medium text-black">
+            <p className="mt-4 text-2xl font-medium text-foreground">
               {formatPrice(Number(product.price))}
             </p>
 
-            <div className="mt-6 border-t border-black/10 pt-6">
-              <p className="text-base text-black/80">{product.description}</p>
+            <div className="mt-6 border-t border-border pt-6">
+              <p className="text-base text-foreground/80">{product.description}</p>
             </div>
 
             <VariantSelector variants={product.variants} />

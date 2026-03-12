@@ -72,22 +72,22 @@ export default function EventsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-stone">
-      <div className="border-b border-black/10">
+    <div className="min-h-screen bg-background">
+      <div className="border-b border-border">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <Link
             href="/community"
-            className="inline-flex items-center font-mono text-xs uppercase tracking-wider text-black/40 hover:text-black/60 transition-colors"
+            className="inline-flex items-center font-mono text-xs uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors"
           >
             ← Back to Community
           </Link>
-          <h1 className="mt-8 font-mono text-sm uppercase tracking-wider text-black/60">
+          <h1 className="mt-8 font-mono text-sm uppercase tracking-wider text-muted-foreground">
             Events
           </h1>
-          <p className="mt-4 text-4xl font-light tracking-tight text-black lg:text-5xl">
+          <p className="mt-4 text-4xl font-light tracking-tight text-foreground lg:text-5xl">
             Run, explore, connect
           </p>
-          <p className="mt-6 max-w-2xl text-lg text-black/70">
+          <p className="mt-6 max-w-2xl text-lg text-foreground/70">
             From sunrise trail runs to multi-day adventures. Join our community events and discover new trails across Europe.
           </p>
         </div>
@@ -98,54 +98,54 @@ export default function EventsPage() {
           {events.map((event) => (
             <div
               key={event.title}
-              className="border border-black/10 bg-white transition-all hover:border-black/20"
+              className="border border-border bg-card transition-all hover:border-foreground/20"
             >
-              <div className="border-b border-black/10 bg-black/5 px-6 py-4">
-                <span className="font-mono text-xs uppercase tracking-wider text-black/60">
+              <div className="border-b border-border bg-muted px-6 py-4">
+                <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                   {event.type}
                 </span>
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-light text-black">{event.title}</h3>
+                <h3 className="text-xl font-light text-card-foreground">{event.title}</h3>
 
                 <div className="mt-6 space-y-3">
                   <div className="flex items-start gap-2">
-                    <Calendar className="h-4 w-4 text-black/40 mt-0.5" />
-                    <p className="text-sm text-black/70">{event.date}</p>
+                    <Calendar className="h-4 w-4 text-muted-foreground mt-0.5" />
+                    <p className="text-sm text-card-foreground/70">{event.date}</p>
                   </div>
 
                   <div className="flex items-start gap-2">
-                    <Clock className="h-4 w-4 text-black/40 mt-0.5" />
-                    <p className="text-sm text-black/70">{event.time}</p>
+                    <Clock className="h-4 w-4 text-muted-foreground mt-0.5" />
+                    <p className="text-sm text-card-foreground/70">{event.time}</p>
                   </div>
 
                   <div className="flex items-start gap-2">
-                    <MapPin className="h-4 w-4 text-black/40 mt-0.5" />
-                    <p className="text-sm text-black/70">{event.location}</p>
+                    <MapPin className="h-4 w-4 text-muted-foreground mt-0.5" />
+                    <p className="text-sm text-card-foreground/70">{event.location}</p>
                   </div>
 
                   <div className="flex items-start gap-2">
-                    <Users className="h-4 w-4 text-black/40 mt-0.5" />
-                    <p className="text-sm text-black/70">{event.participants}</p>
+                    <Users className="h-4 w-4 text-muted-foreground mt-0.5" />
+                    <p className="text-sm text-card-foreground/70">{event.participants}</p>
                   </div>
                 </div>
 
-                <div className="mt-6 flex items-center gap-4 border-t border-black/10 pt-6">
+                <div className="mt-6 flex items-center gap-4 border-t border-border pt-6">
                   <div>
-                    <p className="font-mono text-xs uppercase tracking-wider text-black/40">Distance</p>
-                    <p className="mt-1 text-sm font-medium text-black">{event.distance}</p>
+                    <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Distance</p>
+                    <p className="mt-1 text-sm font-medium text-card-foreground">{event.distance}</p>
                   </div>
                   <div>
-                    <p className="font-mono text-xs uppercase tracking-wider text-black/40">Elevation</p>
-                    <p className="mt-1 text-sm font-medium text-black">{event.elevation}</p>
+                    <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Elevation</p>
+                    <p className="mt-1 text-sm font-medium text-card-foreground">{event.elevation}</p>
                   </div>
                 </div>
 
                 <div className="mt-6">
                   <Link
                     href="/contact"
-                    className="inline-flex w-full items-center justify-center border border-black bg-black px-6 py-3 font-mono text-xs uppercase tracking-wider text-white transition-all hover:bg-transparent hover:text-black"
+                    className="inline-flex w-full items-center justify-center border border-primary bg-primary px-6 py-3 font-mono text-xs uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90"
                   >
                     Register
                   </Link>
@@ -155,18 +155,18 @@ export default function EventsPage() {
           ))}
         </div>
 
-        <div className="mt-24 border-t border-black/10 pt-16">
+        <div className="mt-24 border-t border-border pt-16">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-light text-black">
+            <h2 className="text-3xl font-light text-foreground">
               Private events
             </h2>
-            <p className="mt-6 text-lg text-black/70">
+            <p className="mt-6 text-lg text-foreground/70">
               Looking to organize a custom trail running event for your team or group? We can help plan and host private experiences.
             </p>
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center border border-black px-8 py-3 font-mono text-xs uppercase tracking-wider text-black transition-all hover:bg-black hover:text-white"
+                className="inline-flex items-center justify-center border border-border px-8 py-3 font-mono text-xs uppercase tracking-wider text-foreground transition-all hover:bg-muted"
               >
                 Inquire about private events
               </Link>

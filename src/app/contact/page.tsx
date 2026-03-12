@@ -7,16 +7,16 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-stone">
+    <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl">
-          <h1 className="font-mono text-sm uppercase tracking-wider text-black/60">
+          <h1 className="font-mono text-sm uppercase tracking-wider text-muted-foreground">
             Contact Us
           </h1>
-          <p className="mt-4 text-4xl font-light tracking-tight text-black lg:text-5xl">
+          <p className="mt-4 text-4xl font-light tracking-tight text-foreground lg:text-5xl">
             Let's talk
           </p>
-          <p className="mt-6 text-lg text-black/70">
+          <p className="mt-6 text-lg text-foreground/70">
             Have a question about our products, shipping, or community events? 
             We're here to help.
           </p>
@@ -26,7 +26,7 @@ export default function ContactPage() {
               <div>
                 <label 
                   htmlFor="name" 
-                  className="block font-mono text-xs uppercase tracking-wider text-black/60"
+                  className="block font-mono text-xs uppercase tracking-wider text-muted-foreground"
                 >
                   Name
                 </label>
@@ -34,7 +34,7 @@ export default function ContactPage() {
                   type="text"
                   id="name"
                   name="name"
-                  className="mt-2 block w-full border-b border-black/20 bg-transparent px-0 py-2 text-black placeholder-black/40 focus:border-black focus:outline-none focus:ring-0"
+                  className="mt-2 block w-full border-b border-border bg-transparent px-0 py-2 text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none focus:ring-0"
                   placeholder="Your name"
                 />
               </div>
@@ -42,7 +42,7 @@ export default function ContactPage() {
               <div>
                 <label 
                   htmlFor="email" 
-                  className="block font-mono text-xs uppercase tracking-wider text-black/60"
+                  className="block font-mono text-xs uppercase tracking-wider text-muted-foreground"
                 >
                   Email
                 </label>
@@ -50,7 +50,7 @@ export default function ContactPage() {
                   type="email"
                   id="email"
                   name="email"
-                  className="mt-2 block w-full border-b border-black/20 bg-transparent px-0 py-2 text-black placeholder-black/40 focus:border-black focus:outline-none focus:ring-0"
+                  className="mt-2 block w-full border-b border-border bg-transparent px-0 py-2 text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none focus:ring-0"
                   placeholder="your@email.com"
                 />
               </div>
@@ -58,7 +58,7 @@ export default function ContactPage() {
               <div>
                 <label 
                   htmlFor="subject" 
-                  className="block font-mono text-xs uppercase tracking-wider text-black/60"
+                  className="block font-mono text-xs uppercase tracking-wider text-muted-foreground"
                 >
                   Subject
                 </label>
@@ -66,7 +66,7 @@ export default function ContactPage() {
                   type="text"
                   id="subject"
                   name="subject"
-                  className="mt-2 block w-full border-b border-black/20 bg-transparent px-0 py-2 text-black placeholder-black/40 focus:border-black focus:outline-none focus:ring-0"
+                  className="mt-2 block w-full border-b border-border bg-transparent px-0 py-2 text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none focus:ring-0"
                   placeholder="How can we help?"
                 />
               </div>
@@ -74,7 +74,7 @@ export default function ContactPage() {
               <div>
                 <label 
                   htmlFor="message" 
-                  className="block font-mono text-xs uppercase tracking-wider text-black/60"
+                  className="block font-mono text-xs uppercase tracking-wider text-muted-foreground"
                 >
                   Message
                 </label>
@@ -82,7 +82,7 @@ export default function ContactPage() {
                   id="message"
                   name="message"
                   rows={6}
-                  className="mt-2 block w-full border-b border-black/20 bg-transparent px-0 py-2 text-black placeholder-black/40 focus:border-black focus:outline-none focus:ring-0"
+                  className="mt-2 block w-full border-b border-border bg-transparent px-0 py-2 text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none focus:ring-0"
                   placeholder="Your message..."
                 />
               </div>
@@ -90,7 +90,7 @@ export default function ContactPage() {
               <div>
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center rounded-none border border-black bg-black px-8 py-3 font-mono text-xs uppercase tracking-wider text-white transition-all hover:bg-transparent hover:text-black"
+                  className="inline-flex items-center justify-center rounded-none border border-primary bg-primary px-8 py-3 font-mono text-xs uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90"
                 >
                   Send Message
                 </button>
@@ -98,32 +98,32 @@ export default function ContactPage() {
             </form>
           </div>
 
-          <div className="mt-16 border-t border-black/10 pt-16">
-            <h2 className="text-2xl font-light text-black">Other Ways to Reach Us</h2>
+          <div className="mt-16 border-t border-border pt-16">
+            <h2 className="text-2xl font-light text-foreground">Other Ways to Reach Us</h2>
             <div className="mt-8 space-y-6">
               <div>
-                <h3 className="font-mono text-xs uppercase tracking-wider text-black/60">
+                <h3 className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                   Email
                 </h3>
-                <p className="mt-2 text-lg text-black/70">
+                <p className="mt-2 text-lg text-foreground/70">
                   hello@berlando.run
                 </p>
               </div>
               <div>
-                <h3 className="font-mono text-xs uppercase tracking-wider text-black/60">
+                <h3 className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                   Customer Service
                 </h3>
-                <p className="mt-2 text-lg text-black/70">
+                <p className="mt-2 text-lg text-foreground/70">
                   Available Monday - Friday, 9:00 - 18:00 CET
                 </p>
               </div>
               <div>
-                <h3 className="font-mono text-xs uppercase tracking-wider text-black/60">
+                <h3 className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                   Social
                 </h3>
                 <div className="mt-2 flex gap-4">
-                  <a href="#" className="text-lg text-black/70 hover:text-black">Instagram</a>
-                  <a href="#" className="text-lg text-black/70 hover:text-black">Strava</a>
+                  <a href="#" className="text-lg text-foreground/70 hover:text-foreground">Instagram</a>
+                  <a href="#" className="text-lg text-foreground/70 hover:text-foreground">Strava</a>
                 </div>
               </div>
             </div>

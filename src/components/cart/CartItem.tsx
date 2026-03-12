@@ -26,10 +26,10 @@ export function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
   }
 
   return (
-    <div className="flex gap-4 border-b border-black/10 py-6">
+    <div className="flex gap-4 border-b border-border py-6">
       <Link
         href={`/products/${item.productId}`}
-        className="relative h-24 w-24 flex-shrink-0 overflow-hidden bg-stone"
+        className="relative h-24 w-24 flex-shrink-0 overflow-hidden bg-background"
       >
         {item.image ? (
           <Image
@@ -39,8 +39,8 @@ export function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
             className="object-cover object-center"
           />
         ) : (
-          <div className="flex h-full items-center justify-center bg-black/5">
-            <span className="font-mono text-xs text-black/30">No image</span>
+          <div className="flex h-full items-center justify-center bg-muted">
+            <span className="font-mono text-xs text-muted-foreground">No image</span>
           </div>
         )}
       </Link>
@@ -50,11 +50,11 @@ export function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
           <div className="flex-1">
             <Link
               href={`/products/${item.productId}`}
-              className="text-sm font-medium text-black hover:text-black/70"
+              className="text-sm font-medium text-foreground hover:text-foreground/80"
             >
               {item.name}
             </Link>
-            <div className="mt-1 flex gap-3 font-mono text-xs text-black/60">
+            <div className="mt-1 flex gap-3 font-mono text-xs text-muted-foreground">
               <span>Size: {item.size}</span>
               {item.color && <span>Color: {item.color}</span>}
             </div>
@@ -62,7 +62,7 @@ export function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
 
           <button
             onClick={() => onRemove(item.id)}
-            className="h-6 w-6 text-black/40 hover:text-black"
+            className="h-6 w-6 text-muted-foreground hover:text-foreground"
             aria-label="Remove item"
           >
             <X className="h-4 w-4" />
@@ -73,7 +73,7 @@ export function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
           <div className="flex items-center gap-2">
             <button
               onClick={handleDecrement}
-              className="flex h-8 w-8 items-center justify-center border border-black/20 hover:bg-black/5"
+              className="flex h-8 w-8 items-center justify-center border border-border hover:bg-muted"
               aria-label="Decrease quantity"
             >
               <Minus className="h-3 w-3" />
@@ -81,14 +81,14 @@ export function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
             <span className="w-8 text-center font-mono text-sm">{item.quantity}</span>
             <button
               onClick={handleIncrement}
-              className="flex h-8 w-8 items-center justify-center border border-black/20 hover:bg-black/5"
+              className="flex h-8 w-8 items-center justify-center border border-border hover:bg-muted"
               aria-label="Increase quantity"
             >
               <Plus className="h-3 w-3" />
             </button>
           </div>
 
-          <div className="text-sm font-medium text-black">
+          <div className="text-sm font-medium text-foreground">
             {formatPrice(item.price * item.quantity)}
           </div>
         </div>

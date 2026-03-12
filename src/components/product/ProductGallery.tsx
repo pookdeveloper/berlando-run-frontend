@@ -73,15 +73,15 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
 
   if (images.length === 0) {
     return (
-      <div className="aspect-square w-full bg-black/5 flex items-center justify-center">
-        <span className="font-mono text-sm text-black/30">No images available</span>
+      <div className="aspect-square w-full bg-muted flex items-center justify-center">
+        <span className="font-mono text-sm text-muted-foreground">No images available</span>
       </div>
     )
   }
 
   if (images.length === 1) {
     return (
-      <div className="aspect-square w-full overflow-hidden bg-stone">
+      <div className="aspect-square w-full overflow-hidden bg-background">
         <Zoom>
           <Image
             src={images[0].url}
@@ -98,7 +98,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
 
   return (
     <div className="flex flex-col gap-4">
-      <div ref={sliderRef} className="keen-slider aspect-square overflow-hidden bg-stone">
+      <div ref={sliderRef} className="keen-slider aspect-square overflow-hidden bg-background">
         {images.map((image, idx) => (
           <div key={image.id} className="keen-slider__slide">
             <Zoom>
@@ -122,8 +122,8 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
             onClick={() => {
               instanceRef.current?.moveToIdx(idx)
             }}
-            className={`keen-slider__slide aspect-square overflow-hidden bg-stone border-2 transition-colors ${
-              currentSlide === idx ? 'border-black' : 'border-transparent'
+            className={`keen-slider__slide aspect-square overflow-hidden bg-background border-2 transition-colors ${
+              currentSlide === idx ? 'border-foreground' : 'border-transparent'
             }`}
           >
             <Image
@@ -145,7 +145,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
               instanceRef.current?.moveToIdx(idx)
             }}
             className={`h-2 w-2 rounded-full transition-colors ${
-              currentSlide === idx ? 'bg-black' : 'bg-black/20'
+              currentSlide === idx ? 'bg-foreground' : 'bg-muted-foreground/40'
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           />

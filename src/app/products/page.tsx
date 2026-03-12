@@ -40,24 +40,22 @@ export default async function ProductsPage() {
   const products = await getProducts()
 
   return (
-    <div className="min-h-screen bg-stone">
-      {/* Header Section */}
-      <div className="border-b border-black/10">
+    <div className="min-h-screen bg-background">
+      <div className="border-b border-border">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <h1 className="font-mono text-sm uppercase tracking-wider text-black/60">
+          <h1 className="font-mono text-sm uppercase tracking-wider text-muted-foreground">
             Shop Collection
           </h1>
-          <p className="mt-4 text-4xl font-light tracking-tight text-black lg:text-5xl">
+          <p className="mt-4 text-4xl font-light tracking-tight text-foreground lg:text-5xl">
             Performance apparel for trail runners
           </p>
-          <p className="mt-6 max-w-2xl text-lg text-black/70">
+          <p className="mt-6 max-w-2xl text-lg text-foreground/70">
             Each piece is engineered for maximum freedom of movement. Premium materials, minimal design,
             technical performance.
           </p>
         </div>
       </div>
 
-      {/* Product Grid */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
           {products.map((product: any) => {
@@ -69,7 +67,7 @@ export default async function ProductsPage() {
                 href={`/products/${product.slug}`}
                 className="group"
               >
-                <div className="aspect-square w-full overflow-hidden bg-stone transition-opacity group-hover:opacity-75">
+                <div className="aspect-square w-full overflow-hidden bg-background transition-opacity group-hover:opacity-75">
                   {image ? (
                     <Image
                       src={image.url}
@@ -79,22 +77,22 @@ export default async function ProductsPage() {
                       className="h-full w-full object-cover object-center"
                     />
                   ) : (
-                    <div className="flex h-full items-center justify-center bg-black/5">
-                      <span className="font-mono text-sm text-black/30">No image</span>
+                    <div className="flex h-full items-center justify-center bg-muted">
+                      <span className="font-mono text-sm text-muted-foreground">No image</span>
                     </div>
                   )}
                 </div>
                 <div className="mt-4">
-                  <p className="font-mono text-xs uppercase tracking-wider text-black/60">
+                  <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                     {product.category}
                   </p>
-                  <h3 className="mt-1 text-lg font-medium text-black">
+                  <h3 className="mt-1 text-lg font-medium text-foreground">
                     {product.name}
                   </h3>
-                  <p className="mt-1 text-sm text-black/70 line-clamp-2">
+                  <p className="mt-1 text-sm text-foreground/70 line-clamp-2">
                     {product.description}
                   </p>
-                  <p className="mt-2 text-lg font-medium text-black">
+                  <p className="mt-2 text-lg font-medium text-foreground">
                     {formatPrice(Number(product.price))}
                   </p>
                 </div>
@@ -105,10 +103,10 @@ export default async function ProductsPage() {
 
         {products.length === 0 && (
           <div className="flex min-h-[400px] flex-col items-center justify-center">
-            <p className="font-mono text-sm uppercase tracking-wider text-black/40">
+            <p className="font-mono text-sm uppercase tracking-wider text-muted-foreground">
               No products available
             </p>
-            <p className="mt-2 text-black/60">
+            <p className="mt-2 text-muted-foreground">
               Check back soon for new releases
             </p>
           </div>

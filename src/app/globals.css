@@ -3,8 +3,8 @@
 
 @layer base {
   :root {
-    --background: 40 10% 96%;
-    --foreground: 0 0% 0%;
+    --background: 40 20% 98%;
+    --foreground: 0 0% 8%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 0%;
     --popover: 0 0% 100%;
@@ -13,14 +13,14 @@
     --primary-foreground: 0 0% 100%;
     --secondary: 35 15% 85%;
     --secondary-foreground: 0 0% 0%;
-    --muted: 40 10% 96%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 40 16% 92%;
+    --muted-foreground: 0 0% 32%;
     --accent: 79 20% 35%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
+    --border: 0 0% 84%;
+    --input: 0 0% 84%;
     --ring: 0 0% 0%;
     --radius: 0.5rem;
     --chart-1: 12 76% 61%;
@@ -29,6 +29,28 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
   }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 96%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 0 0% 96%;
+    --primary-foreground: 0 0% 8%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 74%;
+    --accent: 79 20% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 96%;
+    --border: 0 0% 24%;
+    --input: 0 0% 24%;
+    --ring: 0 0% 90%;
+  }
 }
 
 @layer base {
@@ -36,7 +58,7 @@
     border-color: hsl(var(--border));
   }
   body {
-    background-color: #F5F5F0;
+    background-color: hsl(var(--background));
     color: hsl(var(--foreground));
     font-feature-settings: "rlig" 1, "calt" 1;
   }

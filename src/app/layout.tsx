@@ -3,6 +3,8 @@ import { fontGrotesk, fontMono } from "@/lib/fonts";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import { ThemeScript } from "@/components/theme/ThemeScript";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://berlando.run"),
@@ -72,10 +74,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${fontGrotesk.variable} ${fontMono.variable}`}>
-      <body className="antialiased">
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+      <head>
+        <ThemeScript />
+      </head>
+      <body className="bg-background text-foreground antialiased">
+        <ThemeProvider>
+          <Header />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

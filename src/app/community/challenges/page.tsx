@@ -57,22 +57,22 @@ export default function ChallengesPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-stone">
-      <div className="border-b border-black/10">
+    <div className="min-h-screen bg-background">
+      <div className="border-b border-border">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <Link
             href="/community"
-            className="inline-flex items-center font-mono text-xs uppercase tracking-wider text-black/40 hover:text-black/60 transition-colors"
+            className="inline-flex items-center font-mono text-xs uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors"
           >
             ← Back to Community
           </Link>
-          <h1 className="mt-8 font-mono text-sm uppercase tracking-wider text-black/60">
+          <h1 className="mt-8 font-mono text-sm uppercase tracking-wider text-muted-foreground">
             Challenges
           </h1>
-          <p className="mt-4 text-4xl font-light tracking-tight text-black lg:text-5xl">
+          <p className="mt-4 text-4xl font-light tracking-tight text-foreground lg:text-5xl">
             Push your limits
           </p>
-          <p className="mt-6 max-w-2xl text-lg text-black/70">
+          <p className="mt-6 max-w-2xl text-lg text-foreground/70">
             Monthly challenges to motivate and inspire. Compete with the community, track your progress, and earn rewards.
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function ChallengesPage() {
 
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div>
-          <h2 className="font-mono text-sm uppercase tracking-wider text-black/60">
+          <h2 className="font-mono text-sm uppercase tracking-wider text-muted-foreground">
             Active Challenges
           </h2>
           <div className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -89,46 +89,46 @@ export default function ChallengesPage() {
               return (
                 <div
                   key={challenge.title}
-                  className="border border-black/10 bg-white transition-all hover:border-black/20"
+                  className="border border-border bg-card transition-all hover:border-foreground/20"
                 >
-                  <div className="border-b border-black/10 bg-black px-6 py-8 text-center">
+                  <div className="border-b border-border bg-primary px-6 py-8 text-center">
                     <Icon className="mx-auto h-12 w-12 text-white" />
                   </div>
 
                   <div className="p-6">
                     <div className="text-center">
-                      <span className="font-mono text-xs uppercase tracking-wider text-black/40">
+                      <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                         {challenge.type}
                       </span>
-                      <h3 className="mt-2 text-xl font-light text-black">{challenge.title}</h3>
+                      <h3 className="mt-2 text-xl font-light text-card-foreground">{challenge.title}</h3>
                     </div>
 
-                    <div className="mt-6 space-y-4 border-t border-black/10 pt-6">
+                    <div className="mt-6 space-y-4 border-t border-border pt-6">
                       <div className="flex items-center justify-between">
-                        <span className="font-mono text-xs uppercase tracking-wider text-black/40">Goal</span>
-                        <span className="text-lg font-medium text-black">{challenge.goal}</span>
+                        <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Goal</span>
+                        <span className="text-lg font-medium text-card-foreground">{challenge.goal}</span>
                       </div>
 
                       <div className="flex items-center justify-between">
-                        <span className="font-mono text-xs uppercase tracking-wider text-black/40">Period</span>
-                        <span className="text-sm text-black/70">{challenge.period}</span>
+                        <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Period</span>
+                        <span className="text-sm text-card-foreground/70">{challenge.period}</span>
                       </div>
 
                       <div className="flex items-center justify-between">
-                        <span className="font-mono text-xs uppercase tracking-wider text-black/40">Participants</span>
-                        <span className="text-sm text-black/70">{challenge.participants}</span>
+                        <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Participants</span>
+                        <span className="text-sm text-card-foreground/70">{challenge.participants}</span>
                       </div>
 
                       <div className="flex items-center justify-between">
-                        <span className="font-mono text-xs uppercase tracking-wider text-black/40">Reward</span>
-                        <span className="text-sm text-black/70">{challenge.prize}</span>
+                        <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Reward</span>
+                        <span className="text-sm text-card-foreground/70">{challenge.prize}</span>
                       </div>
                     </div>
 
                     <div className="mt-6">
                       <Link
                         href="/contact"
-                        className="inline-flex w-full items-center justify-center border border-black bg-black px-6 py-3 font-mono text-xs uppercase tracking-wider text-white transition-all hover:bg-transparent hover:text-black"
+                        className="inline-flex w-full items-center justify-center border border-primary bg-primary px-6 py-3 font-mono text-xs uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90"
                       >
                         Join challenge
                       </Link>
@@ -141,64 +141,64 @@ export default function ChallengesPage() {
         </div>
 
         <div className="mt-24">
-          <h2 className="font-mono text-sm uppercase tracking-wider text-black/60">
+          <h2 className="font-mono text-sm uppercase tracking-wider text-muted-foreground">
             Completed Challenges
           </h2>
           <div className="mt-8 space-y-4">
             {pastChallenges.map((challenge) => (
               <div
                 key={challenge.title}
-                className="flex items-center justify-between border border-black/10 bg-white px-6 py-4"
+                className="flex items-center justify-between border border-border bg-card px-6 py-4"
               >
                 <div className="flex items-center gap-4">
-                  <Trophy className="h-5 w-5 text-black/40" />
+                  <Trophy className="h-5 w-5 text-muted-foreground" />
                   <div>
-                    <h3 className="font-light text-black">{challenge.title}</h3>
-                    <p className="mt-1 font-mono text-xs uppercase tracking-wider text-black/40">
+                    <h3 className="font-light text-card-foreground">{challenge.title}</h3>
+                    <p className="mt-1 font-mono text-xs uppercase tracking-wider text-muted-foreground">
                       Completed {challenge.completed}
                     </p>
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className="text-sm text-black/70">{challenge.winners} winners</p>
+                  <p className="text-sm text-card-foreground/70">{challenge.winners} winners</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mt-24 border-t border-black/10 pt-16">
+        <div className="mt-24 border-t border-border pt-16">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-light text-black">
+            <h2 className="text-3xl font-light text-foreground">
               How it works
             </h2>
             <div className="mt-12 grid gap-8 md:grid-cols-3">
               <div>
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-black mx-auto">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-primary mx-auto">
                   <span className="font-mono text-lg text-white">1</span>
                 </div>
-                <h3 className="mt-4 font-light text-black">Join</h3>
-                <p className="mt-2 text-sm text-black/60">
+                <h3 className="mt-4 font-light text-foreground">Join</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
                   Sign up for any active challenge
                 </p>
               </div>
 
               <div>
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-black mx-auto">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-primary mx-auto">
                   <span className="font-mono text-lg text-white">2</span>
                 </div>
-                <h3 className="mt-4 font-light text-black">Track</h3>
-                <p className="mt-2 text-sm text-black/60">
+                <h3 className="mt-4 font-light text-foreground">Track</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
                   Log your runs throughout the month
                 </p>
               </div>
 
               <div>
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-black mx-auto">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-primary mx-auto">
                   <span className="font-mono text-lg text-white">3</span>
                 </div>
-                <h3 className="mt-4 font-light text-black">Achieve</h3>
-                <p className="mt-2 text-sm text-black/60">
+                <h3 className="mt-4 font-light text-foreground">Achieve</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
                   Complete goals and earn rewards
                 </p>
               </div>
@@ -207,7 +207,7 @@ export default function ChallengesPage() {
             <div className="mt-12">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center border border-black px-8 py-3 font-mono text-xs uppercase tracking-wider text-black transition-all hover:bg-black hover:text-white"
+                className="inline-flex items-center justify-center border border-border px-8 py-3 font-mono text-xs uppercase tracking-wider text-foreground transition-all hover:bg-muted"
               >
                 Get started
               </Link>

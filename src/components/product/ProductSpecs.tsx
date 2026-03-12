@@ -36,17 +36,17 @@ export function ProductSpecs({
 
   return (
     <Accordion type="single" collapsible defaultValue="specs" className="w-full">
-      <AccordionItem value="specs" className="border-t border-black/10">
+      <AccordionItem value="specs" className="border-t border-border">
         <AccordionTrigger className="flex w-full items-center justify-between py-6 text-left hover:no-underline group">
-          <span className="text-sm font-medium text-black">Technical Specifications</span>
-          <ChevronDown className="h-4 w-4 text-black transition-transform duration-200 group-data-[state=open]:rotate-180" />
+          <span className="text-sm font-medium text-foreground">Technical Specifications</span>
+          <ChevronDown className="h-4 w-4 text-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
         </AccordionTrigger>
         <AccordionContent className="pb-6 data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
           <dl className="space-y-4">
             {specs.map((spec) => (
               <div key={spec.label} className="flex items-start justify-between text-sm">
-                <dt className="font-mono text-black/60">{spec.label}</dt>
-                <dd className="text-right text-black">{spec.value}</dd>
+                <dt className="font-mono text-muted-foreground">{spec.label}</dt>
+                <dd className="text-right text-foreground">{spec.value}</dd>
               </div>
             ))}
           </dl>

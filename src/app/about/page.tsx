@@ -8,20 +8,20 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-stone">
+    <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
-          <h1 className="font-mono text-sm uppercase tracking-wider text-black/60">
+          <h1 className="font-mono text-sm uppercase tracking-wider text-muted-foreground">
             About Berlando
           </h1>
-          <p className="mt-4 text-5xl font-light tracking-tight text-black lg:text-6xl">
+          <p className="mt-4 text-5xl font-light tracking-tight text-foreground lg:text-6xl">
             Run free. Run far.
           </p>
 
           <div className="mt-16 space-y-12">
             <section>
-              <h2 className="text-2xl font-light text-black">Our Story</h2>
-              <div className="mt-6 space-y-4 text-lg leading-relaxed text-black/70">
+              <h2 className="text-2xl font-light text-foreground">Our Story</h2>
+              <div className="mt-6 space-y-4 text-lg leading-relaxed text-foreground/70">
                 <p>
                   Berlando was born from a simple idea: running should feel like freedom. Not restriction, 
                   not discomfort, not compromise. Pure freedom of movement.
@@ -38,32 +38,32 @@ export default function AboutPage() {
               </div>
             </section>
 
-            <section className="border-t border-black/10 pt-12">
-              <h2 className="text-2xl font-light text-black">Our Philosophy</h2>
+            <section className="border-t border-border pt-12">
+              <h2 className="text-2xl font-light text-foreground">Our Philosophy</h2>
               <div className="mt-6 space-y-6">
                 <div>
-                  <h3 className="font-mono text-sm uppercase tracking-wider text-black/60">
+                  <h3 className="font-mono text-sm uppercase tracking-wider text-muted-foreground">
                     01. Remove Unnecessary Elements
                   </h3>
-                  <p className="mt-2 text-lg text-black/70">
+                  <p className="mt-2 text-lg text-foreground/70">
                     Every seam, every pocket, every detail must justify its existence. If it doesn't 
                     enhance performance or freedom of movement, it doesn't belong.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-mono text-sm uppercase tracking-wider text-black/60">
+                  <h3 className="font-mono text-sm uppercase tracking-wider text-muted-foreground">
                     02. Maximize Freedom of Movement
                   </h3>
-                  <p className="mt-2 text-lg text-black/70">
+                  <p className="mt-2 text-lg text-foreground/70">
                     Our patterns and materials are engineered to move with you, not against you. 
                     Stretch where you need it, support where it matters.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-mono text-sm uppercase tracking-wider text-black/60">
+                  <h3 className="font-mono text-sm uppercase tracking-wider text-muted-foreground">
                     03. Use Premium Performance Materials
                   </h3>
-                  <p className="mt-2 text-lg text-black/70">
+                  <p className="mt-2 text-lg text-foreground/70">
                     We source the finest technical fabrics from specialized mills. Materials that 
                     breathe, protect, and endure without adding weight or bulk.
                   </p>
@@ -71,9 +71,9 @@ export default function AboutPage() {
               </div>
             </section>
 
-            <section className="border-t border-black/10 pt-12">
-              <h2 className="text-2xl font-light text-black">Our Commitment</h2>
-              <div className="mt-6 space-y-4 text-lg leading-relaxed text-black/70">
+            <section className="border-t border-border pt-12">
+              <h2 className="text-2xl font-light text-foreground">Our Commitment</h2>
+              <div className="mt-6 space-y-4 text-lg leading-relaxed text-foreground/70">
                 <p>
                   We believe in building gear that lasts. In supporting the trail running community. 
                   In transparency about our materials and manufacturing. In continuous improvement 
@@ -85,9 +85,9 @@ export default function AboutPage() {
               </div>
             </section>
 
-            <section className="border-t border-black/10 pt-12">
-              <h2 className="text-2xl font-light text-black">Community</h2>
-              <div className="mt-6 space-y-4 text-lg leading-relaxed text-black/70">
+            <section className="border-t border-border pt-12">
+              <h2 className="text-2xl font-light text-foreground">Community</h2>
+              <div className="mt-6 space-y-4 text-lg leading-relaxed text-foreground/70">
                 <p>
                   Berlando is more than apparel. We organize run clubs across Europe. We host events 
                   that bring runners together. We share stories and routes through our journal.
