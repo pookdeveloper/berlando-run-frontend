@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { LANDING_MODE } from "@/lib/config";
 
 export default function HomePage() {
   return (
@@ -43,12 +44,14 @@ export default function HomePage() {
             <span className="text-foreground/30">Feel More.</span>
           </h2>
           <div className="mt-12 flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/community"
-              className="inline-block border border-foreground/20 px-10 py-4 text-xs uppercase tracking-[0.25em] font-light text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
-            >
-              Join the Community
-            </Link>
+            {!LANDING_MODE && (
+              <Link
+                href="/community"
+                className="inline-block border border-foreground/20 px-10 py-4 text-xs uppercase tracking-[0.25em] font-light text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+              >
+                Join the Community
+              </Link>
+            )}
             <Link
               href="/contact"
               className="inline-block px-10 py-4 text-xs uppercase tracking-[0.25em] font-light text-foreground/40 hover:text-foreground transition-colors"
