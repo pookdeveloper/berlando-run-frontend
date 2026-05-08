@@ -57,6 +57,23 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000)
 
+## Sharing with a client (no account needed)
+
+Install cloudflared once:
+
+```bash
+brew install cloudflared
+```
+
+Start the dev server and expose it publicly — **use `--protocol http2`** (QUIC/UDP may be blocked on some networks):
+
+```bash
+npm run dev &
+cloudflared tunnel --url http://localhost:3000 --protocol http2
+```
+
+Cloudflare prints a public URL (e.g. `https://xyz.trycloudflare.com`) you can share directly. The tunnel lives as long as the process runs.
+
 ## Project Structure
 
 ```
