@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { LANDING_MODE } from "@/lib/config";
+import Footer from "@/components/layout/Footer";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,12 @@ export default function HomePage() {
             Est. Europe
           </span>
           <div className="flex items-center gap-6">
+            <Link
+              href="/about"
+              className="text-xs uppercase tracking-[0.25em] text-foreground/40 hover:text-foreground transition-colors"
+            >
+              About
+            </Link>
             <Link
               href="/contact"
               className="text-xs uppercase tracking-[0.25em] text-foreground/40 hover:text-foreground transition-colors"
@@ -108,11 +115,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-foreground border-t border-background/10 px-8 md:px-16 py-8 flex items-center justify-between">
-        <span className="text-xs text-background/20 uppercase tracking-[0.2em]">Belando Run</span>
-        <span className="text-xs text-background/20">© {new Date().getFullYear()}</span>
-      </footer>
+      <Footer />
 
     </main>
   );
