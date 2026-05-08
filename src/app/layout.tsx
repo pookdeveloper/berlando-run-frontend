@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { fontGrotesk, fontMono } from "@/lib/fonts";
+import { fontGrotesk, fontMono, fontCairo } from "@/lib/fonts";
 import "./globals.css";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { ThemeScript } from "@/components/theme/ThemeScript";
 
@@ -73,15 +71,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fontGrotesk.variable} ${fontMono.variable}`}>
+    <html lang="en" className={`${fontGrotesk.variable} ${fontMono.variable} ${fontCairo.variable}`}>
       <head>
         <ThemeScript />
       </head>
       <body className="bg-background text-foreground antialiased">
         <ThemeProvider>
-          <Header />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
+          {children}
         </ThemeProvider>
       </body>
     </html>

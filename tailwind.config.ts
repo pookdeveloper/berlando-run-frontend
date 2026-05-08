@@ -60,6 +60,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-grotesk)", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
+        cairo: ["var(--font-cairo)", "sans-serif"],
       },
       spacing: {
         "18": "4.5rem",

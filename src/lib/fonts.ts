@@ -1,4 +1,5 @@
 import { Inter, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 
 export const fontGrotesk = Inter({
   subsets: ["latin"],
@@ -12,4 +13,10 @@ export const fontMono = JetBrains_Mono({
   variable: "--font-mono",
   display: "swap",
   weight: ["400"],
+});
+
+export const fontCairo = localFont({
+  src: "../../assets/fonts/Cairo-Variable.ttf",
+  variable: "--font-cairo",
+  display: "swap",
 });
