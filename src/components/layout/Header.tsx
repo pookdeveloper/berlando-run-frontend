@@ -7,7 +7,7 @@ import { useCart } from "@/stores/cartStore";
 import { CartDrawer } from "@/components/cart/CartDrawer";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
-import { LANDING_MODE } from "@/lib/config";
+import { LANDING_MODE, SHOW_ABOUT } from "@/lib/config";
 
 export default function Header() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -133,12 +133,14 @@ export default function Header() {
                   </Link>
                 )}
 
-                <Link
-                  href="/about"
-                  className="transition-colors hover:text-foreground/80 text-foreground/60"
-                >
-                  About
-                </Link>
+                {SHOW_ABOUT && (
+                  <Link
+                    href="/about"
+                    className="transition-colors hover:text-foreground/80 text-foreground/60"
+                  >
+                    About
+                  </Link>
+                )}
 
                 <Link
                   href="/contact"
@@ -212,13 +214,15 @@ export default function Header() {
                     Journal
                   </Link>
                 )}
-                <Link
-                  href="/about"
-                  className="text-foreground/70 hover:text-foreground"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  About
-                </Link>
+                {SHOW_ABOUT && (
+                  <Link
+                    href="/about"
+                    className="text-foreground/70 hover:text-foreground"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    About
+                  </Link>
+                )}
                 <Link
                   href="/contact"
                   className="text-foreground/70 hover:text-foreground"

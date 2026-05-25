@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
-import { LANDING_MODE, JUNE3_REGISTRATION_URL } from "@/lib/config";
+import { LANDING_MODE, JUNE3_REGISTRATION_URL, SHOW_ABOUT, SHOW_EXTENDED_SECTIONS } from "@/lib/config";
 import Footer from "@/components/layout/Footer";
 
 export default function HomePage() {
@@ -15,12 +15,14 @@ export default function HomePage() {
             Est. Europe
           </span>
           <div className="flex items-center gap-6">
-            <Link
-              href="/about"
-              className="text-xs uppercase tracking-[0.25em] text-foreground/40 hover:text-foreground transition-colors"
-            >
-              About
-            </Link>
+            {SHOW_ABOUT && (
+              <Link
+                href="/about"
+                className="text-xs uppercase tracking-[0.25em] text-foreground/40 hover:text-foreground transition-colors"
+              >
+                About
+              </Link>
+            )}
             <Link
               href="/contact"
               className="text-xs uppercase tracking-[0.25em] text-foreground/40 hover:text-foreground transition-colors"
@@ -73,51 +75,55 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-foreground py-24 px-8 md:px-16">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12">
-          {[
-            { value: "15K+", label: "Active Runners" },
-            { value: "5", label: "Cities" },
-            { value: "120+", label: "Events / Year" },
-            { value: "85%", label: "Engagement" },
-          ].map(({ value, label }) => (
-            <div key={label}>
-              <div className="text-5xl md:text-6xl font-light text-background/90">{value}</div>
-              <div className="mt-2 text-xs uppercase tracking-[0.2em] text-background/40">{label}</div>
+      {SHOW_EXTENDED_SECTIONS && (
+        <>
+          {/* Stats */}
+          <section className="bg-foreground py-24 px-8 md:px-16">
+            <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12">
+              {[
+                { value: "15K+", label: "Active Runners" },
+                { value: "5", label: "Cities" },
+                { value: "120+", label: "Events / Year" },
+                { value: "85%", label: "Engagement" },
+              ].map(({ value, label }) => (
+                <div key={label}>
+                  <div className="text-5xl md:text-6xl font-light text-background/90">{value}</div>
+                  <div className="mt-2 text-xs uppercase tracking-[0.2em] text-background/40">{label}</div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
+          </section>
 
-      {/* Manifesto */}
-      <section className="bg-background border-t border-foreground/10 py-32 px-8 md:px-16">
-        <div className="max-w-3xl mx-auto">
-          <p className="text-xs uppercase tracking-[0.3em] text-foreground/30 mb-10">Manifesto</p>
-          <p className="text-3xl md:text-4xl font-light leading-snug text-foreground/60">
-            Trail running is not a sport.
-            <br />
-            It's a way of seeing the world —
-            <br />
-            <span className="text-foreground">one step at a time.</span>
-          </p>
-        </div>
-      </section>
+          {/* Manifesto */}
+          <section className="bg-background border-t border-foreground/10 py-32 px-8 md:px-16">
+            <div className="max-w-3xl mx-auto">
+              <p className="text-xs uppercase tracking-[0.3em] text-foreground/30 mb-10">Manifesto</p>
+              <p className="text-3xl md:text-4xl font-light leading-snug text-foreground/60">
+                Trail running is not a sport.
+                <br />
+                It's a way of seeing the world —
+                <br />
+                <span className="text-foreground">one step at a time.</span>
+              </p>
+            </div>
+          </section>
 
-      {/* CTA */}
-      <section className="bg-foreground py-32 px-8 md:px-16">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <h2 className="text-4xl md:text-5xl font-light text-background max-w-xs leading-tight">
-            Ready to move?
-          </h2>
-          <Link
-            href="/contact"
-            className="inline-block border border-background/20 px-12 py-5 text-xs uppercase tracking-[0.25em] font-light text-background hover:bg-background hover:text-foreground transition-all duration-300"
-          >
-            Get In Touch
-          </Link>
-        </div>
-      </section>
+          {/* CTA */}
+          <section className="bg-foreground py-32 px-8 md:px-16">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+              <h2 className="text-4xl md:text-5xl font-light text-background max-w-xs leading-tight">
+                Ready to move?
+              </h2>
+              <Link
+                href="/contact"
+                className="inline-block border border-background/20 px-12 py-5 text-xs uppercase tracking-[0.25em] font-light text-background hover:bg-background hover:text-foreground transition-all duration-300"
+              >
+                Get In Touch
+              </Link>
+            </div>
+          </section>
+        </>
+      )}
 
       <Footer />
 
