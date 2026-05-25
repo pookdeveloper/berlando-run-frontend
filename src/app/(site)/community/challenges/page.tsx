@@ -1,60 +1,61 @@
-import { Metadata } from 'next'
-import Link from 'next/link'
-import { Trophy, TrendingUp, Mountain, Target } from 'lucide-react'
+import { Metadata } from "next";
+import Link from "next/link";
+import { Trophy, TrendingUp, Mountain, Target } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: 'Challenges - Berlando Run',
-  description: 'Join monthly running challenges. Distance, elevation, and segment challenges to push your limits.',
-}
+  title: "Challenges - Belando Run",
+  description:
+    "Join monthly running challenges. Distance, elevation, and segment challenges to push your limits.",
+};
 
 export default function ChallengesPage() {
   const currentChallenges = [
     {
-      title: 'March Distance Challenge',
-      goal: '100 km',
-      type: 'Distance',
-      period: 'March 1-31, 2026',
+      title: "March Distance Challenge",
+      goal: "100 km",
+      type: "Distance",
+      period: "March 1-31, 2026",
       participants: 247,
-      prize: 'Berlando Technical Tee',
+      prize: "Belando Technical Tee",
       icon: TrendingUp,
     },
     {
-      title: 'Spring Elevation Challenge',
-      goal: '5,000m+',
-      type: 'Elevation',
-      period: 'March 15 - April 15, 2026',
+      title: "Spring Elevation Challenge",
+      goal: "5,000m+",
+      type: "Elevation",
+      period: "March 15 - April 15, 2026",
       participants: 189,
-      prize: 'Custom Trail Map',
+      prize: "Custom Trail Map",
       icon: Mountain,
     },
     {
-      title: 'Trail Consistency',
-      goal: '12 runs',
-      type: 'Frequency',
-      period: 'March 1-31, 2026',
+      title: "Trail Consistency",
+      goal: "12 runs",
+      type: "Frequency",
+      period: "March 1-31, 2026",
       participants: 312,
-      prize: 'Berlando Run Cap',
+      prize: "Belando Run Cap",
       icon: Target,
     },
-  ]
+  ];
 
   const pastChallenges = [
     {
-      title: 'February Distance Challenge',
+      title: "February Distance Challenge",
       winners: 89,
-      completed: 'February 28, 2026',
+      completed: "February 28, 2026",
     },
     {
-      title: 'Winter Elevation Challenge',
+      title: "Winter Elevation Challenge",
       winners: 67,
-      completed: 'February 15, 2026',
+      completed: "February 15, 2026",
     },
     {
-      title: 'New Year Kickstart',
+      title: "New Year Kickstart",
       winners: 156,
-      completed: 'January 31, 2026',
+      completed: "January 31, 2026",
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -73,7 +74,8 @@ export default function ChallengesPage() {
             Push your limits
           </p>
           <p className="mt-6 max-w-2xl text-lg text-foreground/70">
-            Monthly challenges to motivate and inspire. Compete with the community, track your progress, and earn rewards.
+            Monthly challenges to motivate and inspire. Compete with the
+            community, track your progress, and earn rewards.
           </p>
         </div>
       </div>
@@ -85,7 +87,7 @@ export default function ChallengesPage() {
           </h2>
           <div className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {currentChallenges.map((challenge) => {
-              const Icon = challenge.icon
+              const Icon = challenge.icon;
               return (
                 <div
                   key={challenge.title}
@@ -100,28 +102,46 @@ export default function ChallengesPage() {
                       <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                         {challenge.type}
                       </span>
-                      <h3 className="mt-2 text-xl font-light text-card-foreground">{challenge.title}</h3>
+                      <h3 className="mt-2 text-xl font-light text-card-foreground">
+                        {challenge.title}
+                      </h3>
                     </div>
 
                     <div className="mt-6 space-y-4 border-t border-border pt-6">
                       <div className="flex items-center justify-between">
-                        <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Goal</span>
-                        <span className="text-lg font-medium text-card-foreground">{challenge.goal}</span>
+                        <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+                          Goal
+                        </span>
+                        <span className="text-lg font-medium text-card-foreground">
+                          {challenge.goal}
+                        </span>
                       </div>
 
                       <div className="flex items-center justify-between">
-                        <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Period</span>
-                        <span className="text-sm text-card-foreground/70">{challenge.period}</span>
+                        <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+                          Period
+                        </span>
+                        <span className="text-sm text-card-foreground/70">
+                          {challenge.period}
+                        </span>
                       </div>
 
                       <div className="flex items-center justify-between">
-                        <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Participants</span>
-                        <span className="text-sm text-card-foreground/70">{challenge.participants}</span>
+                        <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+                          Participants
+                        </span>
+                        <span className="text-sm text-card-foreground/70">
+                          {challenge.participants}
+                        </span>
                       </div>
 
                       <div className="flex items-center justify-between">
-                        <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Reward</span>
-                        <span className="text-sm text-card-foreground/70">{challenge.prize}</span>
+                        <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+                          Reward
+                        </span>
+                        <span className="text-sm text-card-foreground/70">
+                          {challenge.prize}
+                        </span>
                       </div>
                     </div>
 
@@ -135,7 +155,7 @@ export default function ChallengesPage() {
                     </div>
                   </div>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
@@ -153,14 +173,18 @@ export default function ChallengesPage() {
                 <div className="flex items-center gap-4">
                   <Trophy className="h-5 w-5 text-muted-foreground" />
                   <div>
-                    <h3 className="font-light text-card-foreground">{challenge.title}</h3>
+                    <h3 className="font-light text-card-foreground">
+                      {challenge.title}
+                    </h3>
                     <p className="mt-1 font-mono text-xs uppercase tracking-wider text-muted-foreground">
                       Completed {challenge.completed}
                     </p>
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className="text-sm text-card-foreground/70">{challenge.winners} winners</p>
+                  <p className="text-sm text-card-foreground/70">
+                    {challenge.winners} winners
+                  </p>
                 </div>
               </div>
             ))}
@@ -216,5 +240,5 @@ export default function ChallengesPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

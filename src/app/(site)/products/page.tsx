@@ -1,22 +1,23 @@
-import { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
-import { formatPrice } from '@/lib/utils'
-import { USE_MOCKS, mockProducts } from '@/mocks'
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { formatPrice } from "@/lib/utils";
+import { USE_MOCKS, mockProducts } from "@/mocks";
 
 export const metadata: Metadata = {
-  title: 'Products - Berlando Run',
-  description: 'Premium trail running apparel designed for freedom of movement and exploration.',
-}
+  title: "Products - Belando Run",
+  description:
+    "Premium trail running apparel designed for freedom of movement and exploration.",
+};
 
-export const dynamic = 'force-dynamic'
+export const dynamic = "force-dynamic";
 
 async function getProducts() {
   if (USE_MOCKS) {
-    return mockProducts.filter(p => p.featured)
+    return mockProducts.filter((p) => p.featured);
   }
-  
-  const { prisma } = await import('@/lib/prisma')
+
+  const { prisma } = await import("@/lib/prisma");
   return prisma.product.findMany({
     where: {
       featured: true,
@@ -24,20 +25,20 @@ async function getProducts() {
     include: {
       images: {
         orderBy: {
-          order: 'asc',
+          order: "asc",
         },
         take: 1,
       },
       variants: true,
     },
     orderBy: {
-      createdAt: 'desc',
+      createdAt: "desc",
     },
-  })
+  });
 }
 
 export default async function ProductsPage() {
-  const products = await getProducts()
+  const products = await getProducts();
 
   return (
     <div className="min-h-screen bg-background">
@@ -50,8 +51,8 @@ export default async function ProductsPage() {
             Performance apparel for trail runners
           </p>
           <p className="mt-6 max-w-2xl text-lg text-foreground/70">
-            Each piece is engineered for maximum freedom of movement. Premium materials, minimal design,
-            technical performance.
+            Each piece is engineered for maximum freedom of movement. Premium
+            materials, minimal design, technical performance.
           </p>
         </div>
       </div>
@@ -59,7 +60,7 @@ export default async function ProductsPage() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
           {products.map((product: any) => {
-            const image = product.images[0]
+            const image = product.images[0];
 
             return (
               <Link
@@ -78,7 +79,9 @@ export default async function ProductsPage() {
                     />
                   ) : (
                     <div className="flex h-full items-center justify-center bg-muted">
-                      <span className="font-mono text-sm text-muted-foreground">No image</span>
+                      <span className="font-mono text-sm text-muted-foreground">
+                        No image
+                      </span>
                     </div>
                   )}
                 </div>
@@ -97,7 +100,7 @@ export default async function ProductsPage() {
                   </p>
                 </div>
               </Link>
-            )
+            );
           })}
         </div>
 
@@ -113,5 +116,5 @@ export default async function ProductsPage() {
         )}
       </div>
     </div>
-  )
+  );
 }

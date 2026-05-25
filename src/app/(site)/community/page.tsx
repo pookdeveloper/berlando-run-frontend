@@ -1,11 +1,11 @@
-import { Metadata } from 'next'
-import Link from 'next/link'
-import { MapPin, Calendar, Trophy } from 'lucide-react'
+import { Metadata } from "next";
+import Link from "next/link";
+import { MapPin, Calendar, Trophy } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: 'Community - Berlando Run',
-  description: 'Join our run clubs, events, and challenges across Europe.',
-}
+  title: "Community - Belando Run",
+  description: "Join our run clubs, events, and challenges across Europe.",
+};
 
 export default function CommunityPage() {
   return (
@@ -19,8 +19,9 @@ export default function CommunityPage() {
             Run together
           </p>
           <p className="mt-6 max-w-2xl text-lg text-foreground/70">
-            Connect with trail runners across Europe. Join run clubs, participate in events, 
-            and challenge yourself with our monthly challenges.
+            Connect with trail runners across Europe. Join run clubs,
+            participate in events, and challenge yourself with our monthly
+            challenges.
           </p>
         </div>
       </div>
@@ -31,9 +32,12 @@ export default function CommunityPage() {
             <div className="flex h-16 w-16 items-center justify-center rounded-full border border-border">
               <MapPin className="h-8 w-8 text-muted-foreground" />
             </div>
-            <h2 className="mt-6 text-2xl font-light text-foreground">Run Clubs</h2>
+            <h2 className="mt-6 text-2xl font-light text-foreground">
+              Run Clubs
+            </h2>
             <p className="mt-4 text-lg text-foreground/70">
-              Join weekly group runs in Madrid, Barcelona, Paris, Berlin, and London. All paces welcome.
+              Join weekly group runs in Madrid, Barcelona, Paris, Berlin, and
+              London. All paces welcome.
             </p>
             <div className="mt-6">
               <Link
@@ -51,7 +55,8 @@ export default function CommunityPage() {
             </div>
             <h2 className="mt-6 text-2xl font-light text-foreground">Events</h2>
             <p className="mt-4 text-lg text-foreground/70">
-              Sunrise runs, trail weekends, and urban exploration. Discover our upcoming events.
+              Sunrise runs, trail weekends, and urban exploration. Discover our
+              upcoming events.
             </p>
             <div className="mt-6">
               <Link
@@ -67,9 +72,12 @@ export default function CommunityPage() {
             <div className="flex h-16 w-16 items-center justify-center rounded-full border border-border">
               <Trophy className="h-8 w-8 text-muted-foreground" />
             </div>
-            <h2 className="mt-6 text-2xl font-light text-foreground">Challenges</h2>
+            <h2 className="mt-6 text-2xl font-light text-foreground">
+              Challenges
+            </h2>
             <p className="mt-4 text-lg text-foreground/70">
-              Monthly distance, elevation, and segment challenges. Push your limits with the community.
+              Monthly distance, elevation, and segment challenges. Push your
+              limits with the community.
             </p>
             <div className="mt-6">
               <Link
@@ -84,12 +92,11 @@ export default function CommunityPage() {
 
         <div className="mt-24 border-t border-border pt-16">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-light text-foreground">
-              Run with us
-            </h2>
+            <h2 className="text-3xl font-light text-foreground">Run with us</h2>
             <p className="mt-6 text-lg text-foreground/70">
-              Our community is built on shared passion for trail running, respect for nature, 
-              and the belief that running is better together.
+              Our community is built on shared passion for trail running,
+              respect for nature, and the belief that running is better
+              together.
             </p>
             <div className="mt-8">
               <Link
@@ -103,5 +110,5 @@ export default function CommunityPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

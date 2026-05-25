@@ -22,20 +22,27 @@ export default async function JournalPostPage({ params }: JournalPostProps) {
       <section className="section">
         <div className="container" style={{ maxWidth: "880px" }}>
           <p className="eyebrow">{post.category}</p>
-          <h1 className="title" style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)" }}>
+          <h1
+            className="title"
+            style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)" }}
+          >
             {post.title}
           </h1>
           <p className="subtitle" style={{ marginBottom: "2rem" }}>
             {post.excerpt}
           </p>
-          <article className="card" style={{ lineHeight: 1.75, color: "#d5dbd4" }}>
+          <article
+            className="card"
+            style={{ lineHeight: 1.75, color: "#d5dbd4" }}
+          >
             <p>
-              This editorial expands the BERLANDO RUN perspective where running means exploration,
-              not repetition. Terrain, city culture, and rhythm combine into a personal identity.
+              This editorial expands the BELANDO RUN perspective where running
+              means exploration, not repetition. Terrain, city culture, and
+              rhythm combine into a personal identity.
             </p>
             <p>
-              We publish route guides, philosophy, and athlete voices to support both search discovery
-              and deeper community participation.
+              We publish route guides, philosophy, and athlete voices to support
+              both search discovery and deeper community participation.
             </p>
           </article>
         </div>

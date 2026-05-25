@@ -1,4 +1,4 @@
-# Berlando Run - Luxury Trail Running Apparel Platform
+# Belando Run - Luxury Trail Running Apparel Platform
 
 Premium trail running apparel e-commerce platform built with Next.js 15, featuring luxury aesthetics, community features, and editorial content.
 
@@ -19,38 +19,44 @@ Premium trail running apparel e-commerce platform built with Next.js 15, featuri
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - PostgreSQL database
 - npm or yarn
 
 ### Installation
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
 2. Set up environment variables:
+
 ```bash
 cp .env.example .env
 ```
 
 Edit `.env` and add your:
+
 - Database connection string
 - Stripe keys
 - Cloudinary credentials
 
 3. Initialize database:
+
 ```bash
 npm run db:push
 ```
 
 4. (Optional) Seed sample data:
+
 ```bash
 npm run db:seed
 ```
 
 5. Run development server:
+
 ```bash
 npm run dev
 ```
@@ -119,23 +125,27 @@ prisma/
 ## Features
 
 ### E-Commerce Core
+
 - Product catalog with variants (size, color)
 - Product detail pages with image galleries
 - Shopping cart with persistent storage
 - Stripe checkout integration
 
 ### Brand Experience
+
 - Hero video on home page
 - Product storytelling (material stories, technical specs)
 - Minimalist luxury design system
 - Custom typography and color palette
 
 ### Community Platform
+
 - Interactive run clubs map (Madrid, Barcelona, Paris, Berlin, London)
 - Events calendar (sunrise runs, trail weekends, urban exploration)
 - Monthly challenges (mileage, elevation, segments)
 
 ### Editorial Journal
+
 - Running philosophy articles
 - Trail route guides
 - Athlete profiles
@@ -155,6 +165,7 @@ prisma/
 ## Design System
 
 ### Colors
+
 - **Black** (#000000): Primary base
 - **Stone** (#F5F5F0): Background
 - **Olive** (#4A5D3F): Outdoor reference
@@ -162,6 +173,7 @@ prisma/
 - **Silver** (#C0C0C0): Technical accent
 
 ### Typography
+
 - **Primary**: Modern grotesk (clean, minimal)
 - **Secondary**: Technical monospace (specs, data)
 
@@ -174,4 +186,4 @@ prisma/
 
 ## License
 
-Proprietary - Berlando Run
+Proprietary - Belando Run

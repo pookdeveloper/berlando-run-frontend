@@ -27,11 +27,12 @@ export const useCart = create<CartState>()(
   persist(
     (set, get) => ({
       items: [],
-      
+
       addItem: (item) => {
         const items = get().items;
         const existingItem = items.find(
-          (i) => i.productId === item.productId && i.variantId === item.variantId
+          (i) =>
+            i.productId === item.productId && i.variantId === item.variantId,
         );
 
         if (existingItem) {
@@ -39,7 +40,7 @@ export const useCart = create<CartState>()(
             items: items.map((i) =>
               i.id === existingItem.id
                 ? { ...i, quantity: i.quantity + item.quantity }
-                : i
+                : i,
             ),
           });
         } else {
@@ -66,7 +67,7 @@ export const useCart = create<CartState>()(
         }
         set({
           items: get().items.map((item) =>
-            item.id === id ? { ...item, quantity } : item
+            item.id === id ? { ...item, quantity } : item,
           ),
         });
       },
@@ -82,13 +83,13 @@ export const useCart = create<CartState>()(
       getTotal: () => {
         return get().items.reduce(
           (total, item) => total + item.price * item.quantity,
-          0
+          0,
         );
       },
     }),
     {
-      name: "berlando-cart-storage",
+      name: "belando-cart-storage",
       storage: createJSONStorage(() => localStorage),
-    }
-  )
+    },
+  ),
 );

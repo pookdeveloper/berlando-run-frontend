@@ -1,21 +1,21 @@
-'use client'
+"use client";
 
-import { Suspense, useEffect } from 'react'
-import { useSearchParams } from 'next/navigation'
-import { useCart } from '@/stores/cartStore'
-import Link from 'next/link'
-import { CheckCircle2 } from 'lucide-react'
+import { Suspense, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import { useCart } from "@/stores/cartStore";
+import Link from "next/link";
+import { CheckCircle2 } from "lucide-react";
 
 function SuccessContent() {
-  const searchParams = useSearchParams()
-  const sessionId = searchParams.get('session_id')
-  const clearCart = useCart((state) => state.clearCart)
+  const searchParams = useSearchParams();
+  const sessionId = searchParams.get("session_id");
+  const clearCart = useCart((state) => state.clearCart);
 
   useEffect(() => {
     if (sessionId) {
-      clearCart()
+      clearCart();
     }
-  }, [sessionId, clearCart])
+  }, [sessionId, clearCart]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -26,7 +26,8 @@ function SuccessContent() {
             Order Confirmed
           </h1>
           <p className="mt-4 text-base text-muted-foreground">
-            Thank you for your order. You will receive an email confirmation shortly.
+            Thank you for your order. You will receive an email confirmation
+            shortly.
           </p>
           {sessionId && (
             <p className="mt-2 font-mono text-xs text-muted-foreground">
@@ -38,19 +39,29 @@ function SuccessContent() {
         <div className="mt-12 border-t border-border pt-12">
           <div className="space-y-6">
             <div>
-              <h2 className="text-lg font-medium text-foreground">What happens next?</h2>
+              <h2 className="text-lg font-medium text-foreground">
+                What happens next?
+              </h2>
               <ul className="mt-4 space-y-3 text-sm text-foreground/80">
                 <li className="flex gap-3">
                   <span className="font-mono text-muted-foreground">1.</span>
-                  <span>You will receive an order confirmation email with your order details</span>
+                  <span>
+                    You will receive an order confirmation email with your order
+                    details
+                  </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="font-mono text-muted-foreground">2.</span>
-                  <span>Your order will be processed and prepared for shipping</span>
+                  <span>
+                    Your order will be processed and prepared for shipping
+                  </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="font-mono text-muted-foreground">3.</span>
-                  <span>You will receive a shipping confirmation with tracking information</span>
+                  <span>
+                    You will receive a shipping confirmation with tracking
+                    information
+                  </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="font-mono text-muted-foreground">4.</span>
@@ -60,11 +71,16 @@ function SuccessContent() {
             </div>
 
             <div className="border-t border-border pt-6">
-              <h2 className="text-lg font-medium text-foreground">Need help?</h2>
+              <h2 className="text-lg font-medium text-foreground">
+                Need help?
+              </h2>
               <p className="mt-2 text-sm text-foreground/80">
-                If you have any questions about your order, please contact us at{' '}
-                <a href="mailto:support@berlando.com" className="font-medium text-foreground underline">
-                  support@berlando.com
+                If you have any questions about your order, please contact us at{" "}
+                <a
+                  href="mailto:support@belando.com"
+                  className="font-medium text-foreground underline"
+                >
+                  support@belando.com
                 </a>
               </p>
             </div>
@@ -87,20 +103,22 @@ function SuccessContent() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default function CheckoutSuccessPage() {
   return (
-    <Suspense fallback={
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center">
-          <div className="h-8 w-8 animate-spin rounded-full border-2 border-foreground border-t-transparent mx-auto" />
-          <p className="mt-4 text-sm text-muted-foreground">Loading...</p>
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-background flex items-center justify-center">
+          <div className="text-center">
+            <div className="h-8 w-8 animate-spin rounded-full border-2 border-foreground border-t-transparent mx-auto" />
+            <p className="mt-4 text-sm text-muted-foreground">Loading...</p>
+          </div>
         </div>
-      </div>
-    }>
+      }
+    >
       <SuccessContent />
     </Suspense>
-  )
+  );
 }

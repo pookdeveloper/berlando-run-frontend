@@ -1,11 +1,11 @@
-import { Metadata } from 'next'
-import Link from 'next/link'
-import { BookOpen, Mountain, Users } from 'lucide-react'
+import { Metadata } from "next";
+import Link from "next/link";
+import { BookOpen, Mountain, Users } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: 'Journal - Berlando Run',
-  description: 'Stories, routes, and philosophy from the trail.',
-}
+  title: "Journal - Belando Run",
+  description: "Stories, routes, and philosophy from the trail.",
+};
 
 export default function JournalPage() {
   return (
@@ -19,7 +19,8 @@ export default function JournalPage() {
             Stories from the trail
           </p>
           <p className="mt-6 max-w-2xl text-lg text-foreground/70">
-            Essays on running philosophy, trail guides, athlete profiles, and the gear that gets us there.
+            Essays on running philosophy, trail guides, athlete profiles, and
+            the gear that gets us there.
           </p>
         </div>
       </div>
@@ -30,9 +31,12 @@ export default function JournalPage() {
             <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border">
               <BookOpen className="h-6 w-6 text-muted-foreground" />
             </div>
-            <h2 className="mt-6 text-xl font-light text-foreground">Philosophy</h2>
+            <h2 className="mt-6 text-xl font-light text-foreground">
+              Philosophy
+            </h2>
             <p className="mt-4 text-foreground/70">
-              Why we run. What freedom means. The relationship between movement and clarity.
+              Why we run. What freedom means. The relationship between movement
+              and clarity.
             </p>
             <div className="mt-6">
               <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
@@ -45,9 +49,12 @@ export default function JournalPage() {
             <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border">
               <Mountain className="h-6 w-6 text-muted-foreground" />
             </div>
-            <h2 className="mt-6 text-xl font-light text-foreground">Trail Guides</h2>
+            <h2 className="mt-6 text-xl font-light text-foreground">
+              Trail Guides
+            </h2>
             <p className="mt-4 text-foreground/70">
-              Our favorite routes across Europe. Technical details, elevation profiles, and what to expect.
+              Our favorite routes across Europe. Technical details, elevation
+              profiles, and what to expect.
             </p>
             <div className="mt-6">
               <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
@@ -60,9 +67,12 @@ export default function JournalPage() {
             <div className="flex h-12 w-12 items-center justify-center rounded-full border border-border">
               <Users className="h-6 w-6 text-muted-foreground" />
             </div>
-            <h2 className="mt-6 text-xl font-light text-foreground">Athlete Stories</h2>
+            <h2 className="mt-6 text-xl font-light text-foreground">
+              Athlete Stories
+            </h2>
             <p className="mt-4 text-foreground/70">
-              Profiles of runners in our community. Their stories, training, and what drives them.
+              Profiles of runners in our community. Their stories, training, and
+              what drives them.
             </p>
             <div className="mt-6">
               <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
@@ -78,7 +88,8 @@ export default function JournalPage() {
               Subscribe to our newsletter
             </h2>
             <p className="mt-6 text-lg text-foreground/70">
-              Get new stories, route recommendations, and community updates delivered to your inbox.
+              Get new stories, route recommendations, and community updates
+              delivered to your inbox.
             </p>
             <form className="mt-8 flex gap-4">
               <input
@@ -97,5 +108,5 @@ export default function JournalPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

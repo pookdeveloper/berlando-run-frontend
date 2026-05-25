@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
-import { LANDING_MODE } from "@/lib/config";
+import { LANDING_MODE, JUNE3_REGISTRATION_URL } from "@/lib/config";
 import Footer from "@/components/layout/Footer";
 
 export default function HomePage() {
@@ -42,29 +42,33 @@ export default function HomePage() {
               priority
             />
           </div>
-          <p className="mt-10 text-xs uppercase tracking-[0.35em] text-foreground/40">
-            Trail Running Community
+          <p className="mt-10 text-2xl md:text-3xl font-light tracking-wide text-foreground/60 max-w-xl mx-auto leading-relaxed">
+            The bridge between global performance brands and local running culture
           </p>
-          <h2 className="mt-6 text-4xl md:text-6xl font-light tracking-tight text-foreground/80 leading-tight">
-            Run Further.
-            <br />
-            <span className="text-foreground/30">Feel More.</span>
-          </h2>
           <div className="mt-12 flex flex-col sm:flex-row gap-4">
-            {!LANDING_MODE && (
-              <Link
-                href="/community"
+            <a
+              href="mailto:enrique@belando.run"
+              className="inline-block border border-foreground/20 px-10 py-4 text-xs uppercase tracking-[0.25em] font-light text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+            >
+              Get in touch
+            </a>
+            {JUNE3_REGISTRATION_URL ? (
+              <a
+                href={JUNE3_REGISTRATION_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block border border-foreground/20 px-10 py-4 text-xs uppercase tracking-[0.25em] font-light text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
               >
-                Join the Community
-              </Link>
+                Register for June 3
+              </a>
+            ) : (
+              <span
+                className="inline-block border border-foreground/10 px-10 py-4 text-xs uppercase tracking-[0.25em] font-light text-foreground/20 cursor-not-allowed"
+                title="Registration coming soon"
+              >
+                Register for June 3
+              </span>
             )}
-            <Link
-              href="/contact"
-              className="inline-block px-10 py-4 text-xs uppercase tracking-[0.25em] font-light text-foreground/40 hover:text-foreground transition-colors"
-            >
-              Partner With Us →
-            </Link>
           </div>
         </div>
       </section>

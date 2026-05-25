@@ -20,8 +20,8 @@ export function HeroSection() {
         <p className="eyebrow">Community for trail and urban runners</p>
         <h1 className="title">Build your running crew.</h1>
         <p className="subtitle">
-          BERLANDO RUN connects local clubs, shared events, and monthly challenges.
-          Equipment is support — community is the core product.
+          BELANDO RUN connects local clubs, shared events, and monthly
+          challenges. Equipment is support — community is the core product.
         </p>
         <div className="cta-row">
           <a className="btn btn-primary" href="#community">

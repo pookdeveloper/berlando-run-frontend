@@ -6,7 +6,7 @@ const navigation = [
   { href: "#events", label: "Events" },
   { href: "#challenges", label: "Challenges" },
   { href: "#philosophy", label: "Philosophy" },
-  { href: "#journal", label: "Journal" }
+  { href: "#journal", label: "Journal" },
 ] as const;
 
 export function Header() {
@@ -19,11 +19,11 @@ export function Header() {
           justifyContent: "space-between",
           alignItems: "center",
           borderBottom: "1px solid #2f3130",
-          paddingBottom: "1rem"
+          paddingBottom: "1rem",
         }}
       >
         <Link href="/" style={{ fontWeight: 700, letterSpacing: "0.14em" }}>
-          BERLANDO RUN
+          BELANDO RUN
         </Link>
         <NavigationMenu.Root>
           <NavigationMenu.List
@@ -33,12 +33,14 @@ export function Header() {
               fontSize: "0.85rem",
               listStyle: "none",
               margin: 0,
-              padding: 0
+              padding: 0,
             }}
           >
             {navigation.map((item) => (
               <NavigationMenu.Item key={item.href}>
-                <NavigationMenu.Link href={item.href}>{item.label}</NavigationMenu.Link>
+                <NavigationMenu.Link href={item.href}>
+                  {item.label}
+                </NavigationMenu.Link>
               </NavigationMenu.Item>
             ))}
           </NavigationMenu.List>

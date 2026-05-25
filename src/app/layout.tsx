@@ -5,10 +5,10 @@ import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { ThemeScript } from "@/components/theme/ThemeScript";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://berlando.run"),
+  metadataBase: new URL("https://belando.run"),
   title: {
-    default: "Berlando Run — Running as Freedom",
-    template: "%s | Berlando Run",
+    default: "Belando Run — Running as Freedom",
+    template: "%s | Belando Run",
   },
   description:
     "Premium trail running apparel designed for freedom, function, and form. Technical gear for runners who explore.",
@@ -20,14 +20,14 @@ export const metadata: Metadata = {
     "ultralight running",
     "run club",
   ],
-  authors: [{ name: "Berlando Run" }],
-  creator: "Berlando Run",
+  authors: [{ name: "Belando Run" }],
+  creator: "Belando Run",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://berlando.run",
-    siteName: "Berlando Run",
-    title: "Berlando Run — Running as Freedom",
+    url: "https://belando.run",
+    siteName: "Belando Run",
+    title: "Belando Run — Running as Freedom",
     description:
       "Premium trail running apparel designed for freedom, function, and form.",
     images: [
@@ -35,17 +35,17 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Berlando Run",
+        alt: "Belando Run",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Berlando Run — Running as Freedom",
+    title: "Belando Run — Running as Freedom",
     description:
       "Premium trail running apparel designed for freedom, function, and form.",
     images: ["/og-image.jpg"],
-    creator: "@berlando_run",
+    creator: "@belando_run",
   },
   robots: {
     index: true,
@@ -71,14 +71,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fontGrotesk.variable} ${fontMono.variable} ${fontCairo.variable}`}>
+    <html
+      lang="en"
+      className={`${fontGrotesk.variable} ${fontMono.variable} ${fontCairo.variable}`}
+    >
       <head>
         <ThemeScript />
       </head>
       <body className="bg-background text-foreground antialiased">
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

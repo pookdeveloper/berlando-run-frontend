@@ -50,7 +50,7 @@ const config: Config = {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
-        // Berlando Brand Colors (from PRD)
+        // Belando Brand Colors (from PRD)
         black: "#000000",
         stone: "#F5F5F0",
         olive: "#4A5D3F",

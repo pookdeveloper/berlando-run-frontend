@@ -7,7 +7,9 @@ type NewsletterFormEvent = React.BaseSyntheticEvent;
 
 export function NewsletterForm() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
   const [message, setMessage] = useState("");
   const [open, setOpen] = useState(false);
 
@@ -20,9 +22,9 @@ export function NewsletterForm() {
       const response = await fetch("/api/newsletter", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email })
+        body: JSON.stringify({ email }),
       });
 
       const result = (await response.json()) as { message?: string };
@@ -53,11 +55,21 @@ export function NewsletterForm() {
         placeholder="Email address"
         required
       />
-      <button className="btn btn-primary" type="submit" disabled={status === "loading"}>
+      <button
+        className="btn btn-primary"
+        type="submit"
+        disabled={status === "loading"}
+      >
         {status === "loading" ? "Subscribing..." : "Subscribe"}
       </button>
       {message ? (
-        <p style={{ width: "100%", marginTop: "0.65rem", color: status === "error" ? "#f2a2a2" : "#b8d9b6" }}>
+        <p
+          style={{
+            width: "100%",
+            marginTop: "0.65rem",
+            color: status === "error" ? "#f2a2a2" : "#b8d9b6",
+          }}
+        >
           {message}
         </p>
       ) : null}
@@ -69,7 +81,7 @@ export function NewsletterForm() {
               position: "fixed",
               inset: 0,
               background: "rgba(0,0,0,0.55)",
-              zIndex: 40
+              zIndex: 40,
             }}
           />
           <Dialog.Content
@@ -81,12 +93,12 @@ export function NewsletterForm() {
               transform: "translate(-50%, -50%)",
               width: "min(92vw, 420px)",
               zIndex: 50,
-              borderRadius: "0.3rem"
+              borderRadius: "0.3rem",
             }}
           >
             <Dialog.Title style={{ margin: 0 }}>You are in.</Dialog.Title>
             <Dialog.Description style={{ color: "#d0d6cf" }}>
-              Welcome to BERLANDO RUN. Your subscription is confirmed.
+              Welcome to BELANDO RUN. Your subscription is confirmed.
             </Dialog.Description>
             <Dialog.Close className="btn btn-primary">Continue</Dialog.Close>
           </Dialog.Content>

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Link from "next/link";
 import { ShoppingBag, Menu, X, ChevronDown } from "lucide-react";
@@ -22,7 +22,9 @@ export default function Header() {
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center gap-8">
               <Link href="/" className="flex items-center space-x-2">
-                <span className="text-xl font-semibold tracking-tight">BERLANDO</span>
+                <span className="text-xl font-semibold tracking-tight">
+                  BELANDO
+                </span>
               </Link>
 
               <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -38,22 +40,34 @@ export default function Header() {
                         sideOffset={5}
                       >
                         <DropdownMenu.Item asChild>
-                          <Link href="/products" className="block px-3 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-muted rounded-sm outline-none cursor-pointer transition-colors">
+                          <Link
+                            href="/products"
+                            className="block px-3 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-muted rounded-sm outline-none cursor-pointer transition-colors"
+                          >
                             All Products
                           </Link>
                         </DropdownMenu.Item>
                         <DropdownMenu.Item asChild>
-                          <Link href="/products?category=trail-shorts" className="block px-3 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-muted rounded-sm outline-none cursor-pointer transition-colors">
+                          <Link
+                            href="/products?category=trail-shorts"
+                            className="block px-3 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-muted rounded-sm outline-none cursor-pointer transition-colors"
+                          >
                             Trail Shorts
                           </Link>
                         </DropdownMenu.Item>
                         <DropdownMenu.Item asChild>
-                          <Link href="/products?category=technical-tees" className="block px-3 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-muted rounded-sm outline-none cursor-pointer transition-colors">
+                          <Link
+                            href="/products?category=technical-tees"
+                            className="block px-3 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-muted rounded-sm outline-none cursor-pointer transition-colors"
+                          >
                             Technical Tees
                           </Link>
                         </DropdownMenu.Item>
                         <DropdownMenu.Item asChild>
-                          <Link href="/products?category=outerwear" className="block px-3 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-muted rounded-sm outline-none cursor-pointer transition-colors">
+                          <Link
+                            href="/products?category=outerwear"
+                            className="block px-3 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-muted rounded-sm outline-none cursor-pointer transition-colors"
+                          >
                             Outerwear
                           </Link>
                         </DropdownMenu.Item>
@@ -74,22 +88,34 @@ export default function Header() {
                         sideOffset={5}
                       >
                         <DropdownMenu.Item asChild>
-                          <Link href="/community" className="block px-3 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-muted rounded-sm outline-none cursor-pointer transition-colors">
+                          <Link
+                            href="/community"
+                            className="block px-3 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-muted rounded-sm outline-none cursor-pointer transition-colors"
+                          >
                             Overview
                           </Link>
                         </DropdownMenu.Item>
                         <DropdownMenu.Item asChild>
-                          <Link href="/community#run-clubs" className="block px-3 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-muted rounded-sm outline-none cursor-pointer transition-colors">
+                          <Link
+                            href="/community#run-clubs"
+                            className="block px-3 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-muted rounded-sm outline-none cursor-pointer transition-colors"
+                          >
                             Run Clubs
                           </Link>
                         </DropdownMenu.Item>
                         <DropdownMenu.Item asChild>
-                          <Link href="/community#events" className="block px-3 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-muted rounded-sm outline-none cursor-pointer transition-colors">
+                          <Link
+                            href="/community#events"
+                            className="block px-3 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-muted rounded-sm outline-none cursor-pointer transition-colors"
+                          >
                             Events
                           </Link>
                         </DropdownMenu.Item>
                         <DropdownMenu.Item asChild>
-                          <Link href="/community#challenges" className="block px-3 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-muted rounded-sm outline-none cursor-pointer transition-colors">
+                          <Link
+                            href="/community#challenges"
+                            className="block px-3 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-muted rounded-sm outline-none cursor-pointer transition-colors"
+                          >
                             Challenges
                           </Link>
                         </DropdownMenu.Item>
@@ -99,16 +125,25 @@ export default function Header() {
                 )}
 
                 {!LANDING_MODE && (
-                  <Link href="/journal" className="transition-colors hover:text-foreground/80 text-foreground/60">
+                  <Link
+                    href="/journal"
+                    className="transition-colors hover:text-foreground/80 text-foreground/60"
+                  >
                     Journal
                   </Link>
                 )}
 
-                <Link href="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+                <Link
+                  href="/about"
+                  className="transition-colors hover:text-foreground/80 text-foreground/60"
+                >
                   About
                 </Link>
 
-                <Link href="/contact" className="transition-colors hover:text-foreground/80 text-foreground/60">
+                <Link
+                  href="/contact"
+                  className="transition-colors hover:text-foreground/80 text-foreground/60"
+                >
                   Contact
                 </Link>
               </nav>
@@ -138,7 +173,11 @@ export default function Header() {
                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={isMobileMenuOpen}
               >
-                {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                {isMobileMenuOpen ? (
+                  <X className="h-5 w-5" />
+                ) : (
+                  <Menu className="h-5 w-5" />
+                )}
               </button>
             </div>
           </div>
@@ -147,24 +186,44 @@ export default function Header() {
             <div className="md:hidden border-t border-border/50 py-4">
               <nav className="flex flex-col gap-3 text-sm">
                 {!LANDING_MODE && (
-                  <Link href="/products" className="text-foreground/70 hover:text-foreground" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Link
+                    href="/products"
+                    className="text-foreground/70 hover:text-foreground"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
                     Shop
                   </Link>
                 )}
                 {!LANDING_MODE && (
-                  <Link href="/community" className="text-foreground/70 hover:text-foreground" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Link
+                    href="/community"
+                    className="text-foreground/70 hover:text-foreground"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
                     Community
                   </Link>
                 )}
                 {!LANDING_MODE && (
-                  <Link href="/journal" className="text-foreground/70 hover:text-foreground" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Link
+                    href="/journal"
+                    className="text-foreground/70 hover:text-foreground"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
                     Journal
                   </Link>
                 )}
-                <Link href="/about" className="text-foreground/70 hover:text-foreground" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link
+                  href="/about"
+                  className="text-foreground/70 hover:text-foreground"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
                   About
                 </Link>
-                <Link href="/contact" className="text-foreground/70 hover:text-foreground" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link
+                  href="/contact"
+                  className="text-foreground/70 hover:text-foreground"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
                   Contact
                 </Link>
 
@@ -178,7 +237,9 @@ export default function Header() {
         </div>
       </header>
 
-      {!LANDING_MODE && <CartDrawer open={isCartOpen} onOpenChange={setIsCartOpen} />}
+      {!LANDING_MODE && (
+        <CartDrawer open={isCartOpen} onOpenChange={setIsCartOpen} />
+      )}
     </>
   );
 }

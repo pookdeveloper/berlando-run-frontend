@@ -5,10 +5,13 @@ export async function POST(request: Request) {
   const email = payload.email?.trim() ?? "";
 
   if (!EMAIL_REGEX.test(email)) {
-    return Response.json({ message: "Please provide a valid email." }, { status: 400 });
+    return Response.json(
+      { message: "Please provide a valid email." },
+      { status: 400 },
+    );
   }
 
   return Response.json({
-    message: "Welcome to BERLANDO RUN. You are now subscribed."
+    message: "Welcome to BELANDO RUN. You are now subscribed.",
   });
 }

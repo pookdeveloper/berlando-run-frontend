@@ -1,68 +1,70 @@
-import { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-import { formatPrice } from '@/lib/utils'
-import { ProductGallery } from '@/components/product/ProductGallery'
-import { VariantSelector } from '@/components/product/VariantSelector'
-import { AddToCart } from '@/components/product/AddToCart'
-import { ProductSpecs } from '@/components/product/ProductSpecs'
-import { MaterialStory } from '@/components/product/MaterialStory'
-import { USE_MOCKS, getProductBySlug } from '@/mocks'
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { formatPrice } from "@/lib/utils";
+import { ProductGallery } from "@/components/product/ProductGallery";
+import { VariantSelector } from "@/components/product/VariantSelector";
+import { AddToCart } from "@/components/product/AddToCart";
+import { ProductSpecs } from "@/components/product/ProductSpecs";
+import { MaterialStory } from "@/components/product/MaterialStory";
+import { USE_MOCKS, getProductBySlug } from "@/mocks";
 
 interface ProductPageProps {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
 }
 
-export const dynamic = 'force-dynamic'
+export const dynamic = "force-dynamic";
 
 async function getProduct(slug: string) {
   if (USE_MOCKS) {
-    return getProductBySlug(slug)
+    return getProductBySlug(slug);
   }
-  
-  const { prisma } = await import('@/lib/prisma')
+
+  const { prisma } = await import("@/lib/prisma");
   return prisma.product.findUnique({
     where: { slug },
     include: {
       images: {
-        orderBy: { order: 'asc' },
+        orderBy: { order: "asc" },
       },
       variants: {
-        orderBy: { size: 'asc' },
+        orderBy: { size: "asc" },
       },
     },
-  })
+  });
 }
 
-export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
-  const { slug } = await params
-  const product = await getProduct(slug)
+export async function generateMetadata({
+  params,
+}: ProductPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const product = await getProduct(slug);
 
   if (!product) {
     return {
-      title: 'Product Not Found - Berlando Run',
-    }
+      title: "Product Not Found - Belando Run",
+    };
   }
 
-  const image = product.images[0]
+  const image = product.images[0];
 
   return {
-    title: `${product.name} - Berlando Run`,
+    title: `${product.name} - Belando Run`,
     description: product.description,
     openGraph: {
       title: product.name,
       description: product.description,
       images: image ? [{ url: image.url, alt: image.alt || product.name }] : [],
     },
-  }
+  };
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-  const { slug } = await params
-  
-  const product = await getProduct(slug)
+  const { slug } = await params;
+
+  const product = await getProduct(slug);
 
   if (!product) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -83,7 +85,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </p>
 
             <div className="mt-6 border-t border-border pt-6">
-              <p className="text-base text-foreground/80">{product.description}</p>
+              <p className="text-base text-foreground/80">
+                {product.description}
+              </p>
             </div>
 
             <VariantSelector variants={product.variants} />
@@ -92,7 +96,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               productId={product.id}
               productName={product.name}
               productPrice={Number(product.price)}
-              productImage={product.images[0]?.url || ''}
+              productImage={product.images[0]?.url || ""}
               productSlug={product.slug}
               variants={product.variants}
             />
@@ -112,5 +116,5 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }
